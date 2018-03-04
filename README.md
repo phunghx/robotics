@@ -1,4 +1,4 @@
-# robotics
+# Robotics
 
 1 - Introduction​ ​to​ ​Robotics <br>
 2 -​ROS​ ​Essentials <br>
