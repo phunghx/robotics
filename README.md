@@ -1,15 +1,15 @@
 # robotics
 
-Course​ ​1:​ ​Introduction​ ​to​ ​Robotics
-Course​ ​2:​ ​ROS​ ​Essentials
-Course​ ​3:​ ​Kinematics
-Course​ ​4:​ ​Perception
-Course​ ​5:​ ​Controls
-Course​ ​6:​ ​Deep​ ​Learning
+1. Introduction​ ​to​ ​Robotics
+2.​ROS​ ​Essentials
+3.​Kinematics
+4.​Perception
+5.​Controls
+6.​Deep​ ​Learning
 
-Course​ ​7:​ ​Term​ ​2​ ​Introduction
-Course​ ​8:​ ​Robotic​ ​Systems​ ​Deployment
-Course​ ​9:​ ​Localization
-Course​ ​10:​ ​SLAM
-Course​ ​11:​ ​Reinforcement​ ​Learning​ ​for​ ​Robotics
-Course​ ​12:​ ​Path​ ​Planning​ ​and​ ​Navigation
+7.​Term​2 - Introduction
+8.​Robotic​Systems​Deployment
+9.​Localization
+10.​SLAM
+11.​Reinforcement​Learning​for​Robotics
+12.​Path​Planning​and​Navigation
