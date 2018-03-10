@@ -36,7 +36,7 @@ python folder/file.py <br>
 ## Project Rubric
 
 **Writeup** <br>
-**__Criteria:__** Provide a writeup (aka this README file) <br>
+__Criteria__: Provide a writeup (aka this README file) <br>
 **Meets Specifications:**  The README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled.
 
 **Notebook Analysis**<br>
