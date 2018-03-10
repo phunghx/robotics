@@ -41,10 +41,10 @@ python folder/file.py <br>
 
 **Notebook Analysis**<br>
 **Criteria:** Run the functions provided in the notebook on test images (first with test data provided, next on data you have recorded).  Add/modify functional to allow for color selection of obstacles and rock samples.<br>
-**Meets Specifications:** Describe in your writeup(and identify where in your code) how you modified or added functions to add obstacle and rock sample identification.
+**Meets Specifications:** Describe in your writeup (and identify where in your code) how you modified or added functions to add obstacle and rock sample identification.
 
-**Criteria:** <br>
-**Meets Specifications:**
+**Criteria:** Populate the `process_image ()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test ddata using the `moviepy` functions provided to create video output of your result.<br>
+**Meets Specifications:** Describe in your writeup how you modified the `process_image()` to demonstrate your analysis and how you created a worldmap.  Include your video output with your submission.
 
 **Criteria:** <br>
 **Meets Specifications:**
