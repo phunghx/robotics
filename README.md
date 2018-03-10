@@ -46,8 +46,8 @@ python folder/file.py <br>
 **Criteria:** Populate the `process_image ()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test ddata using the `moviepy` functions provided to create video output of your result.<br>
 **Meets Specifications:** Describe in your writeup how you modified the `process_image()` to demonstrate your analysis and how you created a worldmap.  Include your video output with your submission.
 
-**Criteria:** <br>
-**Meets Specifications:**
+**Criteria:** Fill in the `perception_step()` (at the bottom of the `perception.py` script) in (`decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.<br>
+**Meets Specifications:** `perception_step()` and `decision_step()` functions have been filled in and their functionality explained in the writeup.
 
 **Criteria:** <br>
 **Meets Specifications:**
