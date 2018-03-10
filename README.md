@@ -49,17 +49,14 @@ __Criteria__: Provide a writeup (aka this README file) <br>
 **Criteria:** Fill in the `perception_step()` (at the bottom of the `perception.py` script) in (`decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.<br>
 **Meets Specifications:** `perception_step()` and `decision_step()` functions have been filled in and their functionality explained in the writeup.
 
-**Criteria:** <br>
-**Meets Specifications:**
+**Criteria:** Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.<br>
+**Meets Specifications:**  By running `drive.py` and launching the simulator in autonomous mode, your rover does a reasonably good job at mapping the environment.
 
-**Criteria:** <br>
-**Meets Specifications:**
+The rover must map at least 40% of the environment with 60% fidelity (accuracy) against the ground truth.  You must also find (map) the location of at least one rock sample.  They don't need to pick up any rocks up, just have them appear in the map (should happen automatically if their map pixels in `Rover.worldmap[:,:,1]` overlap with sample locations.)
 
-**Criteria:** <br>
-**Meets Specifications:**
+Note: running the simulator with different choices of resolution and graphics may produce different results, particularly on different machines!  Make note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to erminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results. 
 
-**Criteria:** <br>
-**Meets Specifications:**
+**Suggestions to Make Your Project Stand Out!:** To have a standout submission on this project you should not only successfully navigate and map the environment in "Autonomous Mode", but also figure out how to collect the samples and return them to the starting point (middle of the map) when you have found them all!
 
 
 
