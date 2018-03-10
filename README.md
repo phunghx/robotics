@@ -43,7 +43,23 @@ python folder/file.py <br>
 **Criteria:** Run the functions provided in the notebook on test images (first with test data provided, next on data you have recorded).  Add/modify functional to allow for color selection of obstacles and rock samples.<br>
 **Meets Specifications:** Describe in your writeup(and identify where in your code) how you modified or added functions to add obstacle and rock sample identification.
 
+**Criteria:** <br>
+**Meets Specifications:**
 
+**Criteria:** <br>
+**Meets Specifications:**
+
+**Criteria:** <br>
+**Meets Specifications:**
+
+**Criteria:** <br>
+**Meets Specifications:**
+
+**Criteria:** <br>
+**Meets Specifications:**
+
+**Criteria:** <br>
+**Meets Specifications:**
 
 
 
