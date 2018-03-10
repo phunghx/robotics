@@ -1,4 +1,4 @@
-# Robotics
+# UDACITY - Robotics Software Engineer Nanodegree
 
 **Term** 1 <br>
 1 - Introduction​ ​to​ ​Robotics <br>
@@ -6,7 +6,7 @@
 3 -​Kinematics <br>
 4 -​Perception <br>
 5 -​Controls <br>
-6 -​Deep​ ​Learning <br>
+6 -​Deep Learning <br>
 
 **Term** 2 <br>
 7 -​Introduction <br>
@@ -16,24 +16,21 @@
 11 -​Reinforcement​Learning​for​Robotics <br>
 12 -​Path​Planning​and​Navigation
 
-# UDACITY - Machine Learning Engineer Nanodegree
-
-## Train a Smartcab How to Drive
-Reinforcement Learning Project
+## Project:  Search and Sample Return
+In this project, you will write code to autonomously map a simulated environment and search for samples of interests.
 
 ## Install
-This project requires Python 2.7 with the pygame library installed:
-
-https://www.pygame.org/wiki/GettingStarted
+Installation links: <br>
+Link 1 <br>
+Link 2 <br>
+Link 3 <br>
+...
 
 ## Code
-Open smartcab/agent.py and implement LearningAgent. Follow TODOs for further instructions.
+Open file.py
 
 ## Run
-Make sure you are in the top-level project directory smartcab/ (that contains this README). Then run:
+Make sure you are in the top-level project directory smartcab/ (that contains this README). Then run: <br>
+python folder/file.py <br>
 
-python smartcab/agent.py
 
-OR:
-
-python -m smartcab.agent
