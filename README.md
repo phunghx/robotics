@@ -40,8 +40,8 @@ python folder/file.py <br>
 **Meets Specifications:**  The README should include a statement and supporting figures / images that explain how each rubric item was addressed, and specifically where in the code each step was handled.
 
 **Notebook Analysis**<br>
-Criteria: <br>
-Meets Specifications: 
+**Criteria:** Run the functions provided in the notebook on test images (first with test data provided, next on data you have recorded).  Add/modify functional to allow for color selection of obstacles and rock samples.<br>
+**Meets Specifications:** Describe in your writeup(and identify where in your code) how you modified or added functions to add obstacle and rock sample identification.
 
 
 
