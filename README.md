@@ -12,5 +12,5 @@
 <p align="center">
 [click <a target="_new" href="https://github.com/carldgosselin/robotics/tree/master/Project%201%20-%20RoboND-Rover-Project">here</a> to go to project folder] <br>
 [click <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/README.md">here</a> to view README file] <br>
-[click <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/writeup_carldgosselin.md">here</a> to go view project writeup]
+[click <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/writeup_carldgosselin.md">here</a> to view project writeup]
 </p>
