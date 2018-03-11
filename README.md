@@ -1,10 +1,9 @@
 # UDACITY - Robotics Software Engineer Nanodegree
 
 ## Please navigate to the project folders for detailed README's for each project.
+<br><br>
 
-
-
-# Project 1 - RoboND-Rover-Project
+## Project 1 - RoboND-Rover-Project
 <a href="Project 1 - RoboND-Rover-Project">
 <div align=center>
 	<img src="Project 1 - RoboND-Rover-Project/misc/rover_image.jpg">
