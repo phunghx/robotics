@@ -1,10 +1,12 @@
 [//]: # (Image References)
-[image_0]: ./misc/rover_image.jpg
+[image_0]: ./Project 1 - RoboND-Rover-Project/misc/rover_image.jpg
 [![Udacity - Robotics NanoDegree Program](https://s3-us-west-1.amazonaws.com/udacity-robotics/Extra+Images/RoboND_flag.png)](https://www.udacity.com/robotics)
 
 # UDACITY - Robotics Software Engineer Nanodegree
 
 ## Please navigate to the project folders for detailed README's for each project.
+
+
 
 # Project 1 - RoboND-Rover-Project
 <a href="Project 1 - RoboND-Rover-Project">
