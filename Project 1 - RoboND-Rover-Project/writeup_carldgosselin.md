@@ -21,6 +21,10 @@
 [image1]: ./misc/rover_image.jpg
 [image2]: ./calibration_images/example_grid1.jpg
 [image3]: ./calibration_images/example_rock1.jpg 
+[image4]: ./misc/screenshot1.png
+[image5]: ./misc/find_rocks.png
+[image6]: ./misc/field_of_view.png
+[image7]: ./misc/video_output.png
 
 ## [Project Rubric](https://review.udacity.com/#!/rubrics/916/view)
 
@@ -30,21 +34,84 @@
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
 
 ### Notebook Analysis
-#### 1. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
-Here is an example of how to include an image in your writeup.
+#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
 
-![alt text][image1]
+[image3]
 
-#### 1. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
+Added/ modified functions to allow for color selection of obstacles and rock samples.
+
+Finding rocks...
+
+```
+def find_rocks(img, levels=(110, 110, 50)):
+    rockpix = ((img[:,:,0] > levels[0]) \
+              & (img[:,:,1] > levels [1]) \
+              & (img[:,:,2] < levels[2]))
+    
+    color_select = np.zeros_like(img[:,:,0])
+    color_select[rockpix] = 1
+    
+    return color_select
+
+rock_map = find_rocks(rock_img)
+fig = plt.figure(figsize=(12,3))
+plt.subplot(121)
+plt.imshow(rock_img)
+plt.subplot(122)
+plt.imshow(rock_map, cmap='gray')
+```
+
+[output]
+
+[image5]
+
+Identifying obstacles...
+
+```
+def perspect_transform(img, src, dst):
+           
+    M = cv2.getPerspectiveTransform(src, dst)
+    warped = cv2.warpPerspective(img, M, (img.shape[1], img.shape[0]))# keep same size as input image
+    mask = cv2.warpPerspective(np.ones_like(img[:,:,0]), M, (img.shape[1], img.shape[0])) #New
+    return warped, mask #new
+``` 
+
+The following was also modified for obstacle detection...
+```
+# warped = perspect_transform(grid_img, source, destination)
+warped, mask = perspect_transform(grid_img, source, destination)
+fig = plt.figure(figsize=(12,3)) #new
+plt.subplot(121) #new
+plt.imshow(warped)
+plt.subplot(122) #new
+plt.imshow(mask, cmap='gray') #new
+```
+
+[output]
+
+[image6]
+
+
+
+#### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
 
-![alt text][image2]
+1) Define source and destination points for perspective transform
+2) Apply perspective transform
+3) Apply color threshold to identify navigable terrain/obstacles/rock samples
+4) Convert thresholded image pixel values to rover-centric coords
+5) Convert rover-centric pixel values to world coords
+6) Update worldmap (to be displayed on right side of screen)
+
+[image7]
+Video output:  https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4
+
 ### Autonomous Navigation and Mapping
 
-#### 1. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
+#### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
 
 
-#### 2. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
+#### 5. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
 
