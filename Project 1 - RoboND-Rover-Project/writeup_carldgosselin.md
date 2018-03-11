@@ -22,7 +22,7 @@
 [image2]: ./calibration_images/example_grid1.jpg
 [image3]: ./calibration_images/example_rock1.jpg 
 
-## [Rubric](https://review.udacity.com/#!/rubrics/916/view) Points
+## [Project Rubric](https://review.udacity.com/#!/rubrics/916/view)
 
 ---
 ### Writeup / README
