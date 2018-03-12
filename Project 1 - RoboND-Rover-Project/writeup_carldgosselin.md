@@ -36,7 +36,7 @@
 #### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
 
 <div align=center>
-	<img src="./color_thresholding.png"> <br>
+	<img src="./misc/color_thresholding.png"> <br>
 	<img src="./misc/field_of_view.png"> <img src="./misc/find_rocks.png">
 </div>
 </br>
