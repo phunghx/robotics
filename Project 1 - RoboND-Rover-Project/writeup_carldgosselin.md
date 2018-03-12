@@ -111,7 +111,7 @@ plt.imshow(rock_map, cmap='gray')
 	<a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">
 		<img src="./misc/video_output.png">
 	</a> <br>
-	Click <a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">here</a> to view video output
+	Click <a href="output/test_mapping.mp4">here</a> to view video output
 </div>
 
 ### Autonomous Navigation and Mapping
