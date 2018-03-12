@@ -98,8 +98,7 @@ plt.imshow(rock_map, cmap='gray')
 	<img src="./misc/find_rocks.png">
 </div>
 
-#### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
-And another! 
+#### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 
 1) Define source and destination points for perspective transform
 2) Apply perspective transform
@@ -111,10 +110,9 @@ And another!
 <div align=center>
 	<a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">
 		<img src="./misc/video_output.png">
-	</a>
+	</a> <br>
+	Click <a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">here</a> to view video output
 </div>
-
-Click <a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">here</a> to view video output
 
 ### Autonomous Navigation and Mapping
 
