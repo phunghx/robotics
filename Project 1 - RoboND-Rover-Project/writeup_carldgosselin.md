@@ -108,7 +108,7 @@ plt.imshow(rock_map, cmap='gray')
 6) Update worldmap (to be displayed on right side of screen)
 
 <div align=center>
-	<a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">
+	<a href="output/test_mapping.mp4">
 		<img src="./misc/video_output.png">
 	</a> <br>
 	Click <a href="output/test_mapping.mp4">here</a> to view video output
