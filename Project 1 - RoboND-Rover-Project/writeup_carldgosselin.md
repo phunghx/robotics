@@ -41,34 +41,6 @@
 </br>
 Added/ modified functions to allow for color selection of obstacles and rock samples.
 
-Finding rocks...
-
-```
-def find_rocks(img, levels=(110, 110, 50)):
-    rockpix = ((img[:,:,0] > levels[0]) \
-              & (img[:,:,1] > levels [1]) \
-              & (img[:,:,2] < levels[2]))
-    
-    color_select = np.zeros_like(img[:,:,0])
-    color_select[rockpix] = 1
-    
-    return color_select
-
-rock_map = find_rocks(rock_img)
-fig = plt.figure(figsize=(12,3))
-plt.subplot(121)
-plt.imshow(rock_img)
-plt.subplot(122)
-plt.imshow(rock_map, cmap='gray')
-```
-
-[output]
-
-<div align=center>
-	<img src="./misc/find_rocks.png">
-</div>
-</br>
-
 Identifying obstacles...
 
 ```
@@ -95,6 +67,33 @@ plt.imshow(mask, cmap='gray') #new
 
 <div align=center>
 	<img src="./misc/field_of_view.png">
+</div>
+
+Finding rocks...
+
+```
+def find_rocks(img, levels=(110, 110, 50)):
+    rockpix = ((img[:,:,0] > levels[0]) \
+              & (img[:,:,1] > levels [1]) \
+              & (img[:,:,2] < levels[2]))
+    
+    color_select = np.zeros_like(img[:,:,0])
+    color_select[rockpix] = 1
+    
+    return color_select
+
+rock_map = find_rocks(rock_img)
+fig = plt.figure(figsize=(12,3))
+plt.subplot(121)
+plt.imshow(rock_img)
+plt.subplot(122)
+plt.imshow(rock_map, cmap='gray')
+```
+
+[output]
+
+<div align=center>
+	<img src="./misc/find_rocks.png">
 </div>
 
 #### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
