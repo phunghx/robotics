@@ -38,7 +38,7 @@
 <div align=center>
 	<img src="./misc/field_of_view.png"> <img src="./misc/find_rocks.png">
 </div>
-
+</br>
 Added/ modified functions to allow for color selection of obstacles and rock samples.
 
 Finding rocks...
@@ -64,7 +64,10 @@ plt.imshow(rock_map, cmap='gray')
 
 [output]
 
-[image5]
+<div align=center>
+	<img src="./misc/find_rocks.png">
+</div>
+</br>
 
 Identifying obstacles...
 
@@ -90,9 +93,9 @@ plt.imshow(mask, cmap='gray') #new
 
 [output]
 
-[image6]
-
-
+<div align=center>
+	<img src="./misc/field_of_view.png">
+</div>
 
 #### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result. 
 And another! 
