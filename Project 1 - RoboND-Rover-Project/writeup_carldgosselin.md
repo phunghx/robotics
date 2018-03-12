@@ -36,7 +36,7 @@
 #### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
 
 <div align=center>
-	<img src="./calibration_images/example_rock1.jpg">
+	<img src="./misc/field_of_view.png"> <img src="./misc/find_rocks.png">
 </div>
 
 Added/ modified functions to allow for color selection of obstacles and rock samples.
