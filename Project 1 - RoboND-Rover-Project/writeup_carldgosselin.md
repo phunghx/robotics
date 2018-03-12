@@ -28,7 +28,6 @@
 
 ## [Project Rubric](https://review.udacity.com/#!/rubrics/916/view)
 
----
 ### Writeup / README
 
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
@@ -36,7 +35,9 @@
 ### Notebook Analysis
 #### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
 
-[image3]
+<div align=center>
+	<img src="./calibration_images/example_rock1.jpg">
+</div>
 
 Added/ modified functions to allow for color selection of obstacles and rock samples.
 
