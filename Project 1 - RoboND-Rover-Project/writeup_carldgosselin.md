@@ -108,8 +108,10 @@ And another!
 6) Update worldmap (to be displayed on right side of screen)
 
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">
+	<img src="./misc/video_output.png">
 </div>
+
+Click <a href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">here</a> to view video output
 
 ### Autonomous Navigation and Mapping
 
