@@ -107,8 +107,9 @@ And another!
 5) Convert rover-centric pixel values to world coords
 6) Update worldmap (to be displayed on right side of screen)
 
-[image7]
-Video output:  https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4
+<div align=center>
+	<img src="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/output/test_mapping.mp4">
+</div>
 
 ### Autonomous Navigation and Mapping
 
