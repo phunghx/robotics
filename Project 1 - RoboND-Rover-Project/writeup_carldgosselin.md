@@ -290,13 +290,12 @@ Here I'll talk about the approach I took, what techniques I used, what worked an
 With the code in my project, the rover was able to drive and map autonomously through the lanscape.  The rover was able to map more than 40% of the envionrment with more than 60% of fidelity (accuracy) against the ground truth.  See screenshot of the result:
 
 <div align=center>
-	<img src="./misc/field_of_view.png"> <br>
+	<img src="./misc/autonomous_score.png"> <br>
 </div>
 
 Approach:
 
 Techniques used: 
-
 
 What worked and what didn't:
 
