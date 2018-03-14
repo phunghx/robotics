@@ -19,7 +19,7 @@
 [ add snippet of code for the rock image and then add the picture of the rock image]
 
 
-- Modified the perpsective transform function <br>
+- Modified the perspective transform function <br>
 the function transforms the picture, from the ground, to a top-down view of the world. <br>
 [Show pic of a ground picture then show pic of the same picture from a top-down view]
 
@@ -40,6 +40,24 @@ image coordinates -> to rover coordinates -> and eventually to world coordinates
 
 #### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 
+So to start off, at this point, we have all images ia a saved dataset call data. And now we want to process them <br>
+and once the image has been process, a library called moviepy will process the images to make a video.  "Making a video of our processed image output" <br>
+
+Applied perspective transforms and color threshold to each image <br>
+[show code for this] <br>
+
+then, from the thresholded images, convert navigable terrain to rover-centric coordinates <br>
+[snippet of code] <br>
+
+
+then, updating the world map with obstacles, rock location, and navigable terrain. <br>
+[snippet of code] <br>
+
+Resume video - 7:44
+
+
+
+
 
 
 
@@ -49,6 +67,10 @@ image coordinates -> to rover coordinates -> and eventually to world coordinates
 #### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
 
 
+talk about the databucket class.  Data is the global object will all of the data... how we use the robot log? video 5:10 <br>
+also reading in map of the world or ground truth map_bw.png <br>
+
+
 
 
 
@@ -56,6 +78,10 @@ image coordinates -> to rover coordinates -> and eventually to world coordinates
 #### 5. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
 **Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
+
+**Settings**
+fps = 25 in simulator
+fps = 60 in moviepy
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
