@@ -7,7 +7,33 @@
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
 
 ### Notebook Analysis
-#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). Add/modify functions to allow for color selection of obstacles and rock samples.
+#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded).
+####Add/modify functions to allow for color selection of obstacles and rock samples.
+
+- My first modification to the code was to redirect the path variable to my own dataset of pictures that I captured with the rover <br>
+[add code here .../carl_dataset path] <br>
+- I kept the code in the Calibration Data section intact.  I could have created a 'grid' picture of my own via the Rover app but decided to keep what was there already. <br>
+- The grid image is required for the perspective transform function.  You could say that this is the initial step for the perspective transform step. <br>
+[add snippet of code just for the grid pic and then add the grid pic just below it] <br>
+- Also, the first step in color thresholding for rock identification is getting a screenshot of the actual rocks we will be searching for <br>
+[ add snippet of code for the rock image and then add the picture of the rock image]
+
+
+- Modified the perpsective transform function <br>
+the function transforms the picture, from the ground, to a top-down view of the world. <br>
+[Show pic of a ground picture then show pic of the same picture from a top-down view]
+
+
+
+- Modified the Color thresholding function <br>
+The purpose of the color thresholding function, for the purpose of this project, is two-fold.  First, it is to identify navigable terrain, the second is to identify obstacles.  In the second instance, obstacles will need to split between obstacles to avoid and obstacles that are rocks. <br>
+[add pic showing normal image, then add pic showing results of color thresholding]
+
+- Coordinate Transformations code stays intact <br>
+image coordinates -> to rover coordinates -> and eventually to world coordinates
+
+
+
 
 
 
@@ -33,4 +59,4 @@
 
 Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
 
-
+1. Explore the `to_polar_coords` function to direct the rover to the most navigable terrain
