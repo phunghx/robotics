@@ -215,7 +215,7 @@ def find_rocks(img, levels=(110, 110, 50)):
     return color_select
 ```
 
-**Modification #3: added code to define the `perspect_transform` points for source and destination images**
+**Modification #3: added code to define the `perspect_transform` points for source and destination images** <br>
 Within the `perspect_transform()` function, code was added to identify the points in the image to translate the image from ground view to a top-down view of the world. <br>
 
 ```
