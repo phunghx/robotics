@@ -189,7 +189,8 @@ note:  I did not make any changes to the `decision.py` script <br>
 
 **perception_step()**
 
-For the most pasrt, the `perceptions_step()` function comes pre-populated with all of the functions we found in the notebook in our previous exercise <br>
+For the most part, the `perceptions_step()` function comes pre-populated with all of the functions we found in the notebook in our previous exercise <br>
+<br>
 Most of the changes required to the `perception_step()` can be taken from the code added to the `process_image` function in the Jupyter Notebook exercise <br>
 
 Different as the perception step takes in the Rover object (as opposed to the Data object in the notebook) <br>
