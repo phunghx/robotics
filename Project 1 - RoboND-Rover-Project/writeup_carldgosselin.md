@@ -182,8 +182,7 @@ The last section in `process_image` is to run `moviepy`to view the processed ima
 
 ### Autonomous Navigation and Mapping
 
-#### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts 
-and an explanation is provided in the writeup of how and why these functions were modified as they were.<br>
+#### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.<br>
 
 At this point of the project, I am able to take the code added into the `process_image()` function in the notebook and place it (with a few changes) to the `perception_step()` function in the `perception.py` script <br>
 note:  I did not make any changes to the `decision.py` script <br>
