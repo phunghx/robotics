@@ -43,7 +43,7 @@ Also, the first step in color thresholding process for rock identification is ge
 **Modifications to the `perspect_transform` function** <br>
 Purpose: This function transforms the picture, from the ground, to a top-down view of the world. <br>
 <div align=center>
-	<img src="./misc/field_of_view.png">
+	<img src="./misc/rover_img.png"><img src="./misc/persp_img.png">
 </div>
 <br>
 
