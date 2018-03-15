@@ -195,9 +195,6 @@ Most of the changes required to the `perception_step()` can be taken from the co
 
 One of the main differences between the notebook and 'perception.py' is that the perception step takes in the `Rover` object (as opposed to the `Data` object in the notebook) <br>
 - The Rover object gives us access to all things Rover, such at the images the rover is seeing, the position, the yaw, etc... <br>
-- I'm going to use the image in particular to do some analysis on things like driveable terrain versus avoiding obstacles <br>
-- Then store the output of the perception into various fields inside the rover such as color-thresholded images for obstacles and color thresholded images for navigable terrain. <br>
-- Then, feed the steering variables such as nav_angles to steer the rover.  If this is not updated, the rover will drive into a straight line until it bumps into an object. <br>
 
 **Modification #1: mask pixels that are outside the field of view of the camera** <br>
 Similar to the changes in the notebook, I added the `mask` variable to the `perspect_tranform` function to mask the pixels outside the field of view of the camera <br>
