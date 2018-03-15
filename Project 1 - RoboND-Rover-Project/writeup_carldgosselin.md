@@ -84,6 +84,7 @@ This is the section of the notebook where the code converts image coordinates to
 
 **Added new section in notebook to find rocks** <br>
 A new section was added in the notebook to identify rocks in the environment called `find_rocks`. <br>
+<br>
 To identify the rocks, the RGB values were set to 110, 110, 50 <br>
 A rock would be identified when the red channel was greater than 110, the green channel greater than 110 and the blue channel less than 50 <br>
 ```
