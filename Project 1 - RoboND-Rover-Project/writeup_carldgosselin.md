@@ -15,7 +15,6 @@ My first modification to the code was to redirect the path variable to my own da
 
 I kept the code in the Calibration Data section intact.  I could have created a 'grid' picture of my own via the Rover app but decided to keep what was there already.
 The grid image is required for the perspective transform function.  You could say that this is the initial step for the perspective transform process. <br>
-[add snippet of code just for the grid pic and then add the grid pic just below it] <br>
 ```
 example_grid = '../calibration_images/example_grid1.jpg'
 example_rock = '../calibration_images/example_rock1.jpg'
