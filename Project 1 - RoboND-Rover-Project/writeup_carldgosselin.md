@@ -113,7 +113,7 @@ plt.imshow(rock_map, cmap='gray')
 
 #### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 
-So to start off, at this point, we have all images ia a saved dataset called `data`. And now we want to process them. <br>
+So to start off, at this point, we have all images in a saved dataset called `data`. And now we want to process them. <br>
 Once the images havs been processed, a library called `moviepy` will create a video out of the processed images.
 
 Each image is processed by the `perspec_transform` and `color_thresh` functions <br>
