@@ -131,7 +131,8 @@ The above gives you a map of where the obstacle pixels are, excluding the pixels
 then, from the thresholded images, the navigable terrain identified from the images are converted to rover-centric coordinates <br>
 `xpix, ypix = rover_coords(threshed)` <br>
 
-afterwards, the world map is updated with obstacles, rock location, and navigable terrain. <br>
+afterwards, the world map is updated with obstacles, rock location, and navigable terrain. 
+<br>
 ```
 data.worldmap[y_world, x_world, 2] = 255
 data.worldmap[obs_y_world, obs_x_world, 0] = 255
@@ -146,8 +147,7 @@ if rock_map.any():
     rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos,
                                                  ypos, yaw, world_size, scale)
     data.worldmap[rock_y_world, rock_x_world, :] = 255
-```
-
+``` 
 <br>
 
 In the worldmap, we want to identify 3 components with 3 different colors. <br>
@@ -159,14 +159,14 @@ We also want to identify obstacles and add them to the red channel <br>
 
 Next, the rock_map is updated when rocks are found. <br>
 
- ``` 
+``` 
  rock_map = find_rocks(warped, levels=(110, 110, 50))
     if rock_map.any():
         rock_x, rock_y = rover_coords(rock_map)
         rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos,
                                                  ypos, yaw, world_size, scale)
         data.worldmap[rock_y_world, rock_x_world, :] = 255
-	```
+``` 
 
 In the above code, `data.worldmap[rock_y_world, rock_x_world, :] = 255` adds the rock detection in green color.
 <br>
