@@ -8,8 +8,7 @@
 
 ### Notebook Analysis
 
-#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). <br>
-####Add/modify functions to allow for color selection of obstacles and rock samples.
+#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded).
 
 My first modification to the code was to redirect the path variable to my own dataset of pictures that I captured with the rover <br>
 `path = '../carl_dataset/IMG/*'` <br>
