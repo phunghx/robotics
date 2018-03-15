@@ -33,7 +33,7 @@ plt.imshow(rock_img)
 </div>
 </br>
 
-Also, the first step in color thresholding for rock identification is getting a screenshot of the rock samples that will be searched. <br>
+Also, the first step in color thresholding process for rock identification is getting a screenshot of the rock samples that will be searched. <br>
 <br>
 <div align=center>
 	<img src="./calibration_images/example_rock1.jpg "> <br>
