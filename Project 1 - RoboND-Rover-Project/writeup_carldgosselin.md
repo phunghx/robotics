@@ -7,8 +7,8 @@
 #### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one.  You can submit your writeup as markdown or pdf.  
 
 ### Notebook Analysis
-#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded).
 
+#### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded). <br>
 ####Add/modify functions to allow for color selection of obstacles and rock samples.
 
 My first modification to the code was to redirect the path variable to my own dataset of pictures that I captured with the rover <br>
@@ -165,8 +165,10 @@ Next, the rock_map is updated when rocks are found. <br>
         rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos,
                                                  ypos, yaw, world_size, scale)
         data.worldmap[rock_y_world, rock_x_world, :] = 255
-```
+	```
+
 In the above code, `data.worldmap[rock_y_world, rock_x_world, :] = 255` adds the rock detection in green color.
+<br>
 
 The last section in `process_image` is to run `moviepy`to view the processed images in sequence for a movie-like view of the results. <br>
 
@@ -177,41 +179,18 @@ The last section in `process_image` is to run `moviepy`to view the processed ima
 	Click <a href="output/test_mapping.mp4">here</a> to view video output
 </div>
 
-
-
-
-
-
-
-
-
 ### Autonomous Navigation and Mapping
 
-#### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
+#### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts 
+and an explanation is provided in the writeup of how and why these functions were modified as they were.<br>
 
+At this point of the project, I am able to take the code added into the `process_image()` function in the notebook and place it (with a few changes) to the `perception_step()` function in the `perception.py` script <br>
+note:  I did not make any changes to the `decision.py` script <br>
 
-talk about the databucket class.  Data is the global object will all of the data... how we use the robot log? video 5:10 <br>
-also reading in map of the world or ground truth map_bw.png <br>
+**perception_step()**
 
-At this point, I'm able to take the code from the process_image() steps and place it (with a few changes) to the perception_step() in the `perception.py` script <br>
-
-Existing code... <br>
-drive_rover.py  - script that calls all other scripts <br>
-- will need to talk about nav_angles and nav_dists <br>
-
-- line 11 executes the perception step.  This triggers all of the image processing functionality <br>
-- line 112 executes the decision step.  This triggers the movement of the rover (and also has starting code for picking up rocks)
-
-supportingFunction.py
-- this updates all of the values of the Rover object
-- It also updates all of the writing at every step
-
-Now, let's look at perecption.py first... <br>
-
-- Perception comes prepolutated with all of the functions we found in the notebook <br>
-- The processImage function in the notebook is called perceptionStep in the 
-
-Video 27:16
+For the most pasrt, the `perceptions_step()` function comes pre-populated with all of the functions we found in the notebook in our previous exercise <br>
+Most of the changes required to the `perception_step()` can be taken from the code added to the `process_image` function in the Jupyter Notebook exercise <br>
 
 Different as the perception step takes in the Rover object (as opposed to the Data object in the notebook) <br>
 - The Rover object gives us access to all things Rover, such at the images the rover is seeing, the position, the yaw, etc... <br>
@@ -219,45 +198,84 @@ Different as the perception step takes in the Rover object (as opposed to the Da
 - Then store the output of the perception into various fields inside the rover such as color-thresholded images for obstacles and color thresholded images for navigable terrain. <br>
 - Then, feed the steering variables such as nav_angles to steer the rover.  If this is not updated, the rover will drive into a straight line until it bumps into an object. <br>
 
-modification 1 <br>
-- similar to the changes in the notebook, I added the perspect_tranform function the mask variable to identify the pixels in the image that are out of view of the camera <rb>
-- also, similar to the changes in the notebook, I added the find_rocks function to find and tally the rocks that are found on the captured images <br>
+**Modification #1: mask pixels that are outside the field of view of the camera** <br>
+Similar to the changes in the notebook, I added the `mask` variable to the `perspect_tranform` function to mask the pixels outside the field of view of the camera <br>
+`mask = cv2.warpPerspective(np.ones_like(img[:,:,0]), M, (img.shape[1], img.shape[0])) #new`
 
-Within the 'perception_step' <br>
-- execute all of the same functions that we're added to the notebook in 'process_image' <br>
-- so, defined the 'perspective_transform' points (source and destination) <br>
-[snippet of code] <br>
-- performed a perspective transform on the image <br>
-[snippet of code] <br>
-- then, threshold the warped image<br>
-- then, create the obstacle image map based on the image inputs <br>
-- addd a few lines of code to show to the viewer what the 'perspect_tranform' looks like.   <br>
-[snippet of code rover.vision_image]... multiply by 255 to see the colors <br>
-- then, convert map image to rover coordinates <br>
-[snippet of code] xpix, ypix <br>
-- then convert to work pixels for navigable terrain and avoiding obstacles <br>
+**Modification #2:  added find_rocks function to find and tally rocks in the environment** <br>
+Also, similar to the changes in the notebook, I added the find_rocks function to find and tally the rocks that are found on the captured images <br>
 
-note:  I did not update the decision.py script
+```
+def find_rocks(img, levels=(110, 110, 50)):
+    rockpix = ((img[:,:,0] > levels[0]) \
+              & (img[:,:,1] > levels [1]) \
+              & (img[:,:,2] < levels[2]))
+    
+    color_select = np.zeros_like(img[:,:,0])
+    color_select[rockpix] = 1
+    
+    return color_select
+```
 
+**Modification #3: added code to define the `perspect_transform` points for source and destination images**
+Within the `perspect_transform()` function, code was added to identify the points in the image to translate the image from ground view to a top-down view of the world. <br>
 
+```
+ source = np.float32([[14, 140], [301 ,140],[200, 96], [118, 96]])
+    destination = np.float32([[image.shape[1]/2 - dst_size, image.shape[0] - bottom_offset],
+                  [image.shape[1]/2 + dst_size, image.shape[0] - bottom_offset],
+                  [image.shape[1]/2 + dst_size, image.shape[0] - 2*dst_size - bottom_offset], 
+                  [image.shape[1]/2 - dst_size, image.shape[0] - 2*dst_size - bottom_offset],
+                  ])
+```
+After this, the `perspect_transform` function did its thing and then the warped images are color-thresholded for navigable terrain vs obstacles <br>
+```
+warped, mask = perspect_transform(Rover.img, source, destination)
 
+threshed = color_thresh(warped)
+obs_map = np.absolute(np.float32(threshed) - 1) * mask
 
+```
 
+with the existing code, a world map can be created to track the movement of the rover <br>
 
-
+<div align=center>
+	<img src="./misc/autonomous_score.png"> <br>
+</div>
+</br>
 
 #### 5. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
-**Note: running the simulator with different choices of resolution and graphics quality may produce different results, particularly on different machines!  Make a note of your simulator settings (resolution and graphics quality set on launch) and frames per second (FPS output to terminal by `drive_rover.py`) in your writeup when you submit the project so your reviewer can reproduce your results.**
+**Settings** <br>
+Simulator screen resolution = 720 x 480 <br>
+fps = 25 in simulator <br>
+fps = 60 in moviepy <br>
 
-**Settings**
-fps = 25 in simulator
-fps = 60 in moviepy
+With the code in my project, I was able to map more 40% of the environment with more than 60% of fidelity against the ground truth.  See screenshot below... <br>
+<div align=center>
+	<img src="./misc/autonomous_score.png"> <br>
+</div>
+</br>
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further.  
+Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further. <br> 
 
-1. Explore the `to_polar_coords` function to direct the rover to the most navigable terrain
-2. Improve the overlap between navigable terrain and obstacles (data.worldmap[..., ...])
+**Approach** <br>
+In this project, I took to approach of learning and dissecting the functionality via the Jupyter Notebook.  The notebook does a nice job at breaking down pieces of functionality for targeted learning.<br>
+I also watched the walkthrough video to give me an overall understanding of the final solution.  
+
+**Techniques** <br>
+The technique I used to get to the final result was to divide the task into it's smallest components.  With the help of Jupyter Notebook, I was able to work on small pieces of code and incrementally tackled each of the steps to make the rover drive autonomously. <br>
+
+**What worked and why** <br>
+Reviewed the course materials and the walkthrough video help me deepen my understanding of the functionality in this project.  Again, taking the time to review each line of code helped me understanding how smaller components contributes to the overall goal of getting a rover to navigate autonomously. <br> 
+
+**Where can it fail?** <br>
+Depending on the start location of the rover, fidelity can be below 60% at the point where the environment has been mapped at 40%. <br>
+
+
+**how can it be improved?** <br>
+1. Explore the `to_polar_coords` function to direct the rover to the most navigable terrain <br>
+2. Improve the overlap between navigable terrain and obstacles <br>
 
 
 
