@@ -255,8 +255,6 @@ With the code in my project, I was able to map more 40% of the environment with 
 </div>
 </br>
 
-Here I'll talk about the approach I took, what techniques I used, what worked and why, where the pipeline might fail and how I might improve it if I were going to pursue this project further. <br> 
-
 **Approach** <br>
 In this project, I took to approach of learning and dissecting the functionality via the Jupyter Notebook.  The notebook does a nice job at breaking down pieces of functionality for targeted learning.<br>
 I also watched the walkthrough video to give me an overall understanding of the final solution.  
@@ -269,7 +267,6 @@ Reviewed the course materials and the walkthrough video help me deepen my unders
 
 **Where can it fail?** <br>
 Depending on the start location of the rover, fidelity can be below 60% at the point where the environment has been mapped at 40%. <br>
-
 
 **how can it be improved?** <br>
 1. Explore the `to_polar_coords` function to direct the rover to the most navigable terrain <br>
