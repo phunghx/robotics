@@ -63,7 +63,7 @@ plt.subplot(122) #new
 plt.imshow(mask, cmap='gray') #new
 ```
 <div align=center>
-	<img src="./misc/rover_img.png"><img src="./misc/persp_img.png">
+	<img src="./misc/field_of_view.png"> <br>
 </div>
 <br>
 
