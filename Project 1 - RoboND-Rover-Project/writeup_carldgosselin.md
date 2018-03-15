@@ -76,9 +76,9 @@ Purpose:  The purpose of this function is to help identify navigable terrain ver
 </div>
 </br>
 note:  A separate function will identify rocks.
-
-Another note:  the entire **Coordinate Transformations** section in the notebook remains the same. <br>
-This is the section of the notebook where the code converts image coordinates to rover coordinates and then to world coordinates.
+<br>
+another note:  the entire **Coordinate Transformations** section in the notebook remains the same. <br>
+This is the section of the notebook where the code converts image coordinates to rover coordinates and then to world coordinates. <br>
 
 **Added new section in notebook to find rocks** <br>
 A new section was added in the notebook to identify rocks in the environment called `find_rocks`. <br>
