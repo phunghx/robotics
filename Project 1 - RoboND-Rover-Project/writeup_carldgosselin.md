@@ -131,7 +131,7 @@ The above gives you a map of where the obstacle pixels are, excluding the pixels
 then, from the thresholded images, the navigable terrain identified from the images are converted to rover-centric coordinates <br>
 `xpix, ypix = rover_coords(threshed)` <br>
 
-aftwards, the world map is updated with obstacles, rock location, and navigable terrain. <br>
+afterwards, the world map is updated with obstacles, rock location, and navigable terrain. <br>
 ```
 data.worldmap[y_world, x_world, 2] = 255
 data.worldmap[obs_y_world, obs_x_world, 0] = 255
