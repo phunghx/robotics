@@ -193,7 +193,7 @@ For the most part, the `perceptions_step()` function comes pre-populated with al
 <br>
 Most of the changes required to the `perception_step()` can be taken from the code added to the `process_image` function in the Jupyter Notebook exercise <br>
 
-Different as the perception step takes in the Rover object (as opposed to the Data object in the notebook) <br>
+One of the main differences between the notebook and 'perception.py' is that the perception step takes in the `Rover` object (as opposed to the `Data` object in the notebook) <br>
 - The Rover object gives us access to all things Rover, such at the images the rover is seeing, the position, the yaw, etc... <br>
 - I'm going to use the image in particular to do some analysis on things like driveable terrain versus avoiding obstacles <br>
 - Then store the output of the perception into various fields inside the rover such as color-thresholded images for obstacles and color thresholded images for navigable terrain. <br>
