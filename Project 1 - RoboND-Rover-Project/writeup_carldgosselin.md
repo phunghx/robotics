@@ -75,11 +75,11 @@ Purpose:  The purpose of this function is to help identify navigable terrain ver
 	<img src="./misc/color_thresholding.png"> <br>
 </div>
 </br>
-note:  A separate function will identify rocks.
-<br>
+note:  a separate function will identify rocks.
+<br><br>
 another note:  the entire **Coordinate Transformations** section in the notebook remains the same. <br>
 This is the section of the notebook where the code converts image coordinates to rover coordinates and then to world coordinates. <br>
-
+<br>
 **Added new section in notebook to find rocks** <br>
 A new section was added in the notebook to identify rocks in the environment called `find_rocks`. <br>
 To identify the rocks, the RGB values were set to 110, 110, 50 <br>
