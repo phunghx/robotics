@@ -256,14 +256,14 @@ With the code in my project, I was able to map more 40% of the environment with 
 </br>
 
 **Approach** <br>
-In this project, I took to approach of learning and dissecting the functionality via the Jupyter Notebook.  The notebook does a nice job at breaking down pieces of functionality for targeted learning.<br>
+In this project, I took the approach of learning and dissecting the functionality via the Jupyter Notebook.  The notebook does a nice job at breaking down pieces of functionality for targeted learning.<br>
 I also watched the walkthrough video to give me an overall understanding of the final solution.  
 
 **Techniques** <br>
 The technique I used to get to the final result was to divide the task into it's smallest components.  With the help of Jupyter Notebook, I was able to work on small pieces of code and incrementally tackled each of the steps to make the rover drive autonomously. <br>
 
 **What worked and why** <br>
-Reviewed the course materials and the walkthrough video help me deepen my understanding of the functionality in this project.  Again, taking the time to review each line of code helped me understanding how smaller components contributes to the overall goal of getting a rover to navigate autonomously. <br> 
+Reviewed the course materials and the walkthrough video help me deepen my understanding of the functionality in this project.  Again, taking the time to review each line of code helped me understanding how smaller components contributed to the overall goal of getting a rover to navigate autonomously. <br> 
 
 **Where can it fail?** <br>
 Depending on the start location of the rover, fidelity can be below 60% at the point where the environment has been mapped at 40%. <br>
