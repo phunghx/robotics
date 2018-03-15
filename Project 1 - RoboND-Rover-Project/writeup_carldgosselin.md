@@ -71,7 +71,7 @@ plt.imshow(mask, cmap='gray') #new
 **Modifications to the `color_thresh` (color thresholding function)** <br>
 Purpose:  The purpose of this function is to help identify navigable terrain versus obstacles (or non-navigable terrain). <br>
 <div align=center>
-	<img src="./misc/field_of_view.png"> <br>
+	<img src="./misc/persp_img.png"> <br>
 	<img src="./misc/color_thresholding.png"> <br>
 </div>
 </br>
