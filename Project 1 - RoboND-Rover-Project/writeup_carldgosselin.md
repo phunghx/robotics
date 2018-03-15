@@ -8,87 +8,179 @@
 
 ### Notebook Analysis
 #### 2. Run the functions provided in the notebook on test images (first with the test data provided, next on data you have recorded).
+
 ####Add/modify functions to allow for color selection of obstacles and rock samples.
 
-- My first modification to the code was to redirect the path variable to my own dataset of pictures that I captured with the rover <br>
-[add code here .../carl_dataset path] <br>
-- I kept the code in the Calibration Data section intact.  I could have created a 'grid' picture of my own via the Rover app but decided to keep what was there already. <br>
-- The grid image is required for the perspective transform function.  You could say that this is the initial step for the perspective transform step. <br>
+My first modification to the code was to redirect the path variable to my own dataset of pictures that I captured with the rover <br>
+`path = '../carl_dataset/IMG/*'` <br>
+
+I kept the code in the Calibration Data section intact.  I could have created a 'grid' picture of my own via the Rover app but decided to keep what was there already.
+The grid image is required for the perspective transform function.  You could say that this is the initial step for the perspective transform step. <br>
 [add snippet of code just for the grid pic and then add the grid pic just below it] <br>
-- Also, the first step in color thresholding for rock identification is getting a screenshot of the actual rocks we will be searching for <br>
-[ add snippet of code for the rock image and then add the picture of the rock image]
+```
+example_grid = '../calibration_images/example_grid1.jpg'
+example_rock = '../calibration_images/example_rock1.jpg'
+grid_img = mpimg.imread(example_grid)
+rock_img = mpimg.imread(example_rock)
+
+fig = plt.figure(figsize=(12,3))
+plt.subplot(121)
+plt.imshow(grid_img)
+plt.subplot(122)
+plt.imshow(rock_img)
+```
+<br>
+<div align=center>
+	<img src="./calibration_images/example_grid1.jpg"> <br>
+</div>
+</br>
+
+Also, the first step in color thresholding for rock identification is getting a screenshot of the actual rock we will be searching for <br>
+<br>
+<div align=center>
+	<img src="./calibration_images/example_rock1.jpg "> <br>
+</div>
+</br>
+
+**Modifications to the `perspect_transform` function** <br>
+Purpose: This function transforms the picture, from the ground, to a top-down view of the world. <br>
+<div align=center>
+	<img src="./misc/field_of_view.png">
+</div>
+<br>
+
+Lines of code were added in the **Perspective Transform** section to exclude the processing of pixels that were outside the field of view of the camera. <br>
+```
+def perspect_transform(img, src, dst):
+	...
+	mask = cv2.warpPerspective(np.ones_like(img[:,:,0]), M, (img.shape[1], img.shape[0])) #New
+    return warped, mask #new
+    
+
+warped, mask = perspect_transform(grid_img, source, destination)
+fig = plt.figure(figsize=(12,3)) #new
+plt.subplot(121) #new
+plt.imshow(warped)
+plt.subplot(122) #new
+plt.imshow(mask, cmap='gray') #new
+```
+<div align=center>
+	<img src="./misc/rover_img.png"><img src="./misc/persp_img.png">
+</div>
+<br>
 
 
-- Modified the perspective transform function <br>
-the function transforms the picture, from the ground, to a top-down view of the world. <br>
-[Show pic of a ground picture then show pic of the same picture from a top-down view]
+**Modifications to the `color_thresh` (color thresholding function)** <br>
+Purpose:  The purpose of this function is to help identify navigable terrain versus obstacles (or non-navigable terrain). <br>
+<div align=center>
+	<img src="./misc/field_of_view.png"> <br>
+	<img src="./misc/color_thresholding.png"> <br>
+</div>
+</br>
+note:  A separate function will identify rocks.
 
+Another note:  the entire **Coordinate Transformations** section in the notebook remains the same. <br>
+This is the section of the notebook where the code converts image coordinates to rover coordinates and then to world coordinates.
 
+**Added new section in notebook to find rocks** <br>
+A new section was added in the notebook to identify rocks in the environment called `find_rocks`. <br>
+To identify the rocks, the RGB values were set to 110, 110, 50 <br>
+A rock would be identified when the red channel was greater than 110, the green channel greater than 110 and the blue channel less than 50 <br>
+```
+def find_rocks(img, levels=(110, 110, 50)):
+    rockpix = ((img[:,:,0] > levels[0]) \
+              & (img[:,:,1] > levels [1]) \
+              & (img[:,:,2] < levels[2]))
+    
+    color_select = np.zeros_like(img[:,:,0])
+    color_select[rockpix] = 1
+    
+    return color_select
 
-- Modified the Color thresholding function <br>
-The purpose of the color thresholding function, for the purpose of this project, is two-fold.  First, it is to identify navigable terrain, the second is to identify obstacles.  In the second instance, obstacles will need to split between obstacles to avoid and obstacles that are rocks. <br>
-[add pic showing normal image, then add pic showing results of color thresholding]
+rock_map = find_rocks(rock_img)
+fig = plt.figure(figsize=(12,3))
+plt.subplot(121)
+plt.imshow(rock_img)
+plt.subplot(122)
+plt.imshow(rock_map, cmap='gray')
 
-- Coordinate Transformations code stays intact <br>
-image coordinates -> to rover coordinates -> and eventually to world coordinates
-
-
-- In the second time around, I added the lines of code in the perspective transform section to exclude any processing of areas of image that was simply out of view for the camera. <br>
-- In other words, we don't want to map pixels that are zeros simply because they were outside the field of view of the camera. We just want to map pixels that are inside the field of view of the camera.<br>
-[show code]
-
-- On the second pass of the Jupyter Notebook, I also added a function to find rocks in the environment. <br>
-- To identify the rocks, the RGB values were set to 110, 110, 50 <br>
-- A rock would be identified when the red channel was greater than 110, the green channel greater than 110 and the blue channel less than 50 <br>
-[show snippet of code]
-
-
-
-
-
-
-
-
+```
+<div align=center>
+	<img src="./misc/find_rocks.png">
+</div>
+</br>
 
 #### 3. Populate the `process_image()` function with the appropriate analysis steps to map pixels identifying navigable terrain, obstacles and rock samples into a worldmap.  Run `process_image()` on your test data using the `moviepy` functions provided to create video output of your result.
 
-So to start off, at this point, we have all images ia a saved dataset call data. And now we want to process them <br>
-and once the image has been process, a library called moviepy will process the images to make a video.  "Making a video of our processed image output" <br>
+So to start off, at this point, we have all images ia a saved dataset called `data`. And now we want to process them. <br>
+Once the images havs been processed, a library called `moviepy` will create a video out of the processed images.
 
-Applied perspective transforms and color threshold to each image <br>
-[show code for this] <br>
-- The above code now returns both warped and mask
+Each image is processed by the `perspec_transform` and `color_thresh` functions <br>
+```
+warped, mask = perspect_transform(img, source, destination)
+threshed = color_thresh(warped)
+```
+note:  `mask` was added to exclude pixels outside the camera view <br>
 
-then, created the threshold map, this includes the mask to exclude the pixels outside of the field of view of the rover.
-[snippet of code]
-- the code will output '1' wherever the map shows a '0'(because of the -1 and absolute value) and then multiply by mask (which has '0' for pixels outside the view of the camera)<br>
-- so it basically gives you a map of where the obstacle pixels are, excluding the pixels that are outside the field of view.
+next, the threshold map is created <br>
+`  obs_map = np.absolute(np.float32(threshed) - 1) * mask` <br>
+the code will output '1' wherever the map shows a '0'(because of the -1 and absolute value) and then multiply by mask (which has '0' for pixels outside the view of the camera)<br>
+The above gives you a map of where the obstacle pixels are, excluding the pixels that are outside the field of view. <br>
 
-then, from the thresholded images, convert navigable terrain to rover-centric coordinates <br>
-[snippet of code] <br>
+then, from the thresholded images, the navigable terrain identified from the images are converted to rover-centric coordinates <br>
+`xpix, ypix = rover_coords(threshed)` <br>
+
+aftwards, the world map is updated with obstacles, rock location, and navigable terrain. <br>
+```
+data.worldmap[y_world, x_world, 2] = 255
+data.worldmap[obs_y_world, obs_x_world, 0] = 255
+
+nav_pix = data.worldmap[:,:,2] > 0
+    
+data.worldmap[nav_pix, 0] = 0
+
+rock_map = find_rocks(warped, levels=(110, 110, 50))
+if rock_map.any():
+    rock_x, rock_y = rover_coords(rock_map)
+    rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos,
+                                                 ypos, yaw, world_size, scale)
+    data.worldmap[rock_y_world, rock_x_world, :] = 255
+```
+
+<br>
+
+In the worldmap, we want to identify 3 components with 3 different colors. <br>
+We want to identify navigable terrain and add them to the blue channel <br>
+`data.worldmap[y_world, x_world, 2] = 255`
+
+We also want to identify obstacles and add them to the red channel <br>
+`data.worldmap[obs_y_world, obs_x_world, 0] = 255` <br>
+
+Next, the rock_map is updated when rocks are found. <br>
+
+ ``` 
+ rock_map = find_rocks(warped, levels=(110, 110, 50))
+    if rock_map.any():
+        rock_x, rock_y = rover_coords(rock_map)
+        rock_x_world, rock_y_world = pix_to_world(rock_x, rock_y, xpos,
+                                                 ypos, yaw, world_size, scale)
+        data.worldmap[rock_y_world, rock_x_world, :] = 255
+```
+In the above code, `data.worldmap[rock_y_world, rock_x_world, :] = 255` adds the rock detection in green color.
+
+The last section in `process_image` is to run `moviepy`to view the processed images in sequence for a movie-like view of the results. <br>
+
+<div align=center>
+	<a href="output/test_mapping.mp4">
+		<img src="./misc/video_output.png">
+	</a> <br>
+	Click <a href="output/test_mapping.mp4">here</a> to view video output
+</div>
 
 
-then, updating the world map with obstacles, rock location, and navigable terrain. <br>
-[snippet of code] <br>
-
-In the worldmap, we want to identify 3 components with 3 different colors <br>
-- We want to identify obstacles and add them to the red channel 
-[show snippet of code] 
-
-- We want to identify rocks and add them to the green channel <br>
-[show snippet of code]
-
-- We want to identify navigable terrain and add them to the blue channel <br>
-[show snippet of code]
 
 
-- Next, we want to update the rock_map to capture when we've found rocks. <br>
-[show snippet of code]
 
-
-- Then, i used the existing code to run moviepy to view the processed images in sequence for a movie-like view of the results. <br>
-[show pic of video - and link to real video] <br>
-- Same code expcet the overlay code will actually have something to show when the video runs.
 
 
 
@@ -146,6 +238,13 @@ Within the 'perception_step' <br>
 - then convert to work pixels for navigable terrain and avoiding obstacles <br>
 
 note:  I did not update the decision.py script
+
+
+
+
+
+
+
 
 #### 5. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
