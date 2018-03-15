@@ -93,12 +93,6 @@ In the worldmap, we want to identify 3 components with 3 different colors <br>
 
 
 
-
-
-
-
-
-
 ### Autonomous Navigation and Mapping
 
 #### 4. Fill in the `perception_step()` (at the bottom of the `perception.py` script) and `decision_step()` (in `decision.py`) functions in the autonomous mapping scripts and an explanation is provided in the writeup of how and why these functions were modified as they were.
@@ -127,10 +121,31 @@ Now, let's look at perecption.py first... <br>
 
 Video 27:16
 
+Different as the perception step takes in the Rover object (as opposed to the Data object in the notebook) <br>
+- The Rover object gives us access to all things Rover, such at the images the rover is seeing, the position, the yaw, etc... <br>
+- I'm going to use the image in particular to do some analysis on things like driveable terrain versus avoiding obstacles <br>
+- Then store the output of the perception into various fields inside the rover such as color-thresholded images for obstacles and color thresholded images for navigable terrain. <br>
+- Then, feed the steering variables such as nav_angles to steer the rover.  If this is not updated, the rover will drive into a straight line until it bumps into an object. <br>
 
+modification 1 <br>
+- similar to the changes in the notebook, I added the perspect_tranform function the mask variable to identify the pixels in the image that are out of view of the camera <rb>
+- also, similar to the changes in the notebook, I added the find_rocks function to find and tally the rocks that are found on the captured images <br>
 
+Within the 'perception_step' <br>
+- execute all of the same functions that we're added to the notebook in 'process_image' <br>
+- so, defined the 'perspective_transform' points (source and destination) <br>
+[snippet of code] <br>
+- performed a perspective transform on the image <br>
+[snippet of code] <br>
+- then, threshold the warped image<br>
+- then, create the obstacle image map based on the image inputs <br>
+- addd a few lines of code to show to the viewer what the 'perspect_tranform' looks like.   <br>
+[snippet of code rover.vision_image]... multiply by 255 to see the colors <br>
+- then, convert map image to rover coordinates <br>
+[snippet of code] xpix, ypix <br>
+- then convert to work pixels for navigable terrain and avoiding obstacles <br>
 
-
+note:  I did not update the decision.py script
 
 #### 5. Launching in autonomous mode your rover can navigate and map autonomously.  Explain your results and how you might improve them in your writeup.  
 
