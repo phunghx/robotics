@@ -1,5 +1,5 @@
 # Project 1: Search and Sample Return
-
+<br>
 <div align=center>
 	<img src="./misc/rover1.gif">
 </div>
@@ -180,7 +180,7 @@ The last section in `process_image` is to run `moviepy`to view the processed ima
 
 <div align=center>
 	<a href="output/test_mapping.mp4">
-		<img src="./misc/video_output.png">
+		<img src="./misc/rover1.gif">
 	</a> <br>
 	Click <a href="output/test_mapping.mp4">here</a> to view video output
 </div>
