@@ -14,3 +14,7 @@
 <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/README.md">readme</a> -
 <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/writeup_carldgosselin.md">writeup</a>
 </p>
+<br>
+<div align=center>
+	<img src="Project 1 - RoboND-Rover-Project/misc/rover1.gif">
+</div>
