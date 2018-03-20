@@ -1,5 +1,10 @@
 # Project 1: Search and Sample Return
 
+<div align=center>
+	<img src="./misc/rover1.gif">
+</div>
+</br>
+
 ## [Project Rubric](https://review.udacity.com/#!/rubrics/916/view)
 
 ### Writeup / README

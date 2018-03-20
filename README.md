@@ -7,8 +7,6 @@
 <a href="Project 1 - RoboND-Rover-Project">
 <div align=center>
 	<img src="Project 1 - RoboND-Rover-Project/misc/rover_image.jpg">
-	<img src="Project 1 - RoboND-Rover-Project/misc/rover1.gif">
-	
 </div>
 </a>
 <p align="center">
