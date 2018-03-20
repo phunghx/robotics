@@ -15,6 +15,8 @@
 <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%201%20-%20RoboND-Rover-Project/writeup_carldgosselin.md">writeup</a>
 </p>
 <br>
+<a href="Project 1 - RoboND-Rover-Project/writeup_carldgosselin.md">
 <div align=center>
 	<img src="Project 1 - RoboND-Rover-Project/misc/rover1.gif">
 </div>
+</a>
