@@ -14,7 +14,7 @@
 <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%202%20-%20RoboND-Pick-and-Place/README.md">readme</a> -
 <a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%202%20-%20RoboND-Pick-and-Place/writeup_carldgosselin.md">writeup</a>
 </p>
-
+<br>
 
 ## Project 1 - RoboND-Rover-Project
 <a href="Project 1 - RoboND-Rover-Project">
