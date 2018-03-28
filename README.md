@@ -6,7 +6,7 @@
 ## Project 2 - RoboND-Pick-and-Place
 <a href="Project 2 - RoboND-Pick-and-Place">
 <div align=center>
-	<img src="Project 2 - RoboND-Pick-and-Place/misc_images/misc3.png">
+	<img src="Project 2 - RoboND-Pick-and-Place/misc_images/misc1.png">
 </div>
 </a>
 <p align="center">
