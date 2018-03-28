@@ -2,6 +2,9 @@
 ### The Writeup
 ---
 
+<div align=center>
+	<img src="./misc_images/misc3.png">
+</div>
 
 **Steps to complete the project:**  
 
@@ -21,7 +24,6 @@
 [image3]: ./misc_images/misc2.png
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
-### Here I will consider the rubric points individually and describe how I addressed each point in my implementation.  
 
 ---
 ### Writeup / README
