@@ -39,6 +39,19 @@ Below is a summary of the DH parameter assignment process:
 
 
 
+Below are the DH parameters for this project:
+
+|ID   |![alpha][alpha_i-1] |![a][a] |![d][d] |![theta][theta]    |
+|:---:|:------------------:|:------:|:------:|:-----------------:| 
+|    1|                  0 |      0 |   0.75 |     ![q1][theta1] |
+|    2|      ![-pi2][-pi2] |   0.35 |      0 |  ![q2][theta2-90] |
+|    3|                  0 |   1.25 |      0 |     ![q3][theta3] |
+|    4|      ![-pi2][-pi2] | -0.054 |   1.50 |     ![q4][theta4] |
+|    5|        ![pi2][pi2] |      0 |      0 |     ![q5][theta5] |
+|    6|      ![-pi2][-pi2] |      0 |      0 |     ![q6][theta6] |
+|   EE|                  0 |      0 |  0.303 |                 0 |
+
+
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
 Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
