@@ -139,8 +139,3 @@ And here's where you can draw out and show your math for the derivation of your 
 
 Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
 
-
-And just for fun, another example image:
-![alt text][image3]
-
-
