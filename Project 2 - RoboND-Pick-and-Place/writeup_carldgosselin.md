@@ -3,7 +3,7 @@
 ---
 
 <div align=center>
-	<img src="./misc_images/misc3.png">
+	<img src="misc_images/req-challenge.gif">
 </div>
 
 **Steps to complete the project:**  
