@@ -41,6 +41,8 @@ Below is a summary of the DH parameter assignment process:
 
 Below are the DH parameters for this project:
 
+![dh][dh]
+
 |ID   |![alpha][alpha_i-1] |![a][a] |![d][d] |![theta][theta]    |
 |:---:|:------------------:|:------:|:------:|:-----------------:| 
 |    1|                  0 |      0 |   0.75 |     ![q1][theta1] |
