@@ -32,7 +32,7 @@
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
 Below is a summary of the DH parameter assignment process:
-
+<br>
 <div align=center>
 	<img src="misc_images/DH_assignment.png">
 </div>
@@ -40,9 +40,9 @@ Below is a summary of the DH parameter assignment process:
 <div align=center>
 	<img src="misc_images/DHparameterAssignment.JPG" height="600">	
 </div>
-
+<br>
 Below are the DH parameters for this project:
-
+<br>
 <div align=center>
 	<img src="misc_images/DHparametersTable.png"  height="600">
 </div>
