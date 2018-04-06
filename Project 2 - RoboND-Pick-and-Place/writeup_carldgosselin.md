@@ -61,8 +61,9 @@ Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
 
 
 In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
-
-
+<br>
+[placeholder]
+<br>
 
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
