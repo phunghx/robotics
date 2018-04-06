@@ -38,9 +38,9 @@ Below is a summary of the DH parameter assignment process:
 </div>
 
 <div align=center>
-	<img src="misc_images/DHparameterAssignment.JPG" height="400">
+	<img src="misc_images/DHparameterAssignment.JPG" height="600">
 	<br>
-	<img src="misc_images/DHparametersTable.png">
+	<img src="misc_images/DHparametersTable.png"  height="600">
 	
 </div>
 
