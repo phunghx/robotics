@@ -38,7 +38,7 @@ Below is a summary of the DH parameter assignment process:
 <br>
 Visual for angles:
 <div align=center>
-	<img src="misc_images/circle.png" height="600">	
+	<img src="misc_images/circle.png" height="300">	
 </div>
 <br>
 
