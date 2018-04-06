@@ -42,7 +42,7 @@ Below is a summary of the DH parameter assignment process:
 </div>
 <br>
 Below are the DH parameters for this project:
-<br>
+<br><br>
 <div align=center>
 	<img src="misc_images/DHparametersTable.png"  height="600">
 </div>
