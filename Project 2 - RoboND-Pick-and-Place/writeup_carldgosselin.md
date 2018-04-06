@@ -37,16 +37,14 @@ Below is a summary of the DH parameter assignment process:
 	<img src="misc_images/DH_assignment.png">
 </div>
 
+Below are the DH parameters for this project:
+
 <div align=center>
 	<img src="misc_images/DHparameterAssignment.JPG" height="600">
 	<br>
 	<img src="misc_images/DHparametersTable.png"  height="600">
 	
 </div>
-
-
-Below are the DH parameters for this project:
-
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 
