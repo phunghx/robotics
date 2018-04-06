@@ -36,6 +36,12 @@ Below is a summary of the DH parameter assignment process:
 	<img src="misc_images/DHparameterAssignment.JPG" height="600">	
 </div>
 <br>
+Visual for angles:
+<div align=center>
+	<img src="misc_images/circle.png">	
+</div>
+<br>
+
 Below are the DH parameters for this project:
 <br><br>
 <div align=center>
