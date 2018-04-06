@@ -2,14 +2,12 @@
 ### The Writeup
 In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a can from a shelf to a dropbox.
 
-<br>
-
 <div align=center>
 	<img src="misc_images/req-challenge.gif">
 </div>
+<br>
 
 **Steps to complete the project:**  
-
 
 1. Set up your ROS Workspace.
 2. Download or clone the [project repository](https://github.com/udacity/RoboND-Kinematics-Project) into the ***src*** directory of your ROS Workspace.  
