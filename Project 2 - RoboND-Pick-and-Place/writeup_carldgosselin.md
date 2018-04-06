@@ -3,7 +3,6 @@
 In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a can from a shelf to a dropbox.
 
 <br>
----
 
 <div align=center>
 	<img src="misc_images/req-challenge.gif">
@@ -28,7 +27,6 @@ In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a ca
 
 ## [Rubric](https://review.udacity.com/#!/rubrics/972/view) Points
 
----
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
