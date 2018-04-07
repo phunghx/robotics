@@ -150,6 +150,16 @@ Here is the DH table in python code:
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. 
 
+
+Here is the theoretical equation to create individual transformation matrices.  As you can see, the DH convention uses four individual transforms:
+
+[insert pic]
+
+The following matrix will create the actual individual transforms:
+
+[insert pic]
+
+Here is the modified DH Transformation matrix in code:
 ```
 # Modified DH Transformation matrix
 def DH_T_Matrix (q, alpha, d, a):
@@ -158,6 +168,7 @@ def DH_T_Matrix (q, alpha, d, a):
                         [ sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],
                         [                 0,                 0,           0,             1]])
     return DH_Matrix
+
 
 # Create individual transformation matrices
 
