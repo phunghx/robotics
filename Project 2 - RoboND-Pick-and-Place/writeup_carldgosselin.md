@@ -195,6 +195,7 @@ The following code is applied to generate a generalized homogeneous transform us
 T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
 ```
 <br>
+
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 And here's where you can draw out and show your math for the derivation of your theta angles. 
