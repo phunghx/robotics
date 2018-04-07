@@ -18,9 +18,9 @@ In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a ca
 
 Below is a code snippet from the kr210.urdf.xacro file:
 
-'''
+``
 placeholder
-'''
+```
 
 
 Below is a summary of the DH parameter assignment process:
