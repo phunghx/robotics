@@ -205,7 +205,7 @@ The IK problem can be decoupled into **Inverse Position** and **Inverse Orientat
 <br>
 **Solving the Inverse Position** <br>
 <br>
-To solve the inverse position problem.  We need the end-effector position.  This data is provided in the following code:
+To solve the inverse position problem.  We need the requested end-effector position.  This data is provided in the following code:
 ```
     px = req.poses[x].position.x
     py = req.poses[x].position.y
