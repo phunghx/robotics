@@ -127,7 +127,7 @@ dg is the distance between joint 6 and the end effector along the x axis. <br>
  <child link="gripper_link"/>
  <origin xyz="0.11 0 0" rpy="0 0 0"/><!--0.087-->
 ```
-note:  Theta, the revolute axis, has **theta 2** corresponding to a turn of -90 degrees
+note:  Theta, the revolute axis, has **theta 2** corresponding to a turn of -90 degrees.
 <br><br>
 Behold, the resulting DH parameters table:
 <br><br>
