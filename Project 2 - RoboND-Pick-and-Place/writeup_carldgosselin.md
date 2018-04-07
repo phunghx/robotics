@@ -150,7 +150,25 @@ Here is the DH table in python code:
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. 
 
+```
+# Modified DH Transformation matrix
+def DH_T_Matrix (q, alpha, d, a):
+    DH_Matrix = Matrix([[             cos(q),          -sin(q),           0,             a],
+                        [ sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
+                        [ sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],
+                        [                 0,                 0,           0,             1]])
+    return DH_Matrix
 
+# Create individual transformation matrices
+
+    T0_1 = DH_T_Matrix(q1, alpha0, d1, a0).subs(s)
+    T1_2 = DH_T_Matrix(q2, alpha1, d2, a1).subs(s)
+    T2_3 = DH_T_Matrix(q3, alpha2, d3, a2).subs(s)
+    T3_4 = DH_T_Matrix(q4, alpha3, d4, a3).subs(s)
+    T4_5 = DH_T_Matrix(q5, alpha4, d5, a4).subs(s)
+    T5_6 = DH_T_Matrix(q6, alpha5, d6, a5).subs(s)
+    T6_G = DH_T_Matrix(q7, alpha6, d7, a6).subs(s)
+```
 
 
 In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
