@@ -79,11 +79,6 @@ Result...
 	<img src="misc_images/DHparameterAssignment.JPG" height="600">	
 </div>
 <br>
-Visual for angles:
-<div align=center>
-	<img src="misc_images/circle.png" height="300">	
-</div>
-<br>
 
 Below are the DH parameters:
 <br><br>
