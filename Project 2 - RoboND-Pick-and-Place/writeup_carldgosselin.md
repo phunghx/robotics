@@ -80,6 +80,15 @@ Result...
 </div>
 <br>
 
+A few notes...
+a1 is the distance between joint 1 and joint 2 -> 0.35.  This is indicated in the kr210.urdf.xacro file <br>
+```
+<joint name="joint_2" type="revolute">
+ <origin xyz="0.35 0 0.42" rpy="0 0 0"/>
+```
+
+
+
 Below are the DH parameters:
 <br><br>
 <div align=center>
@@ -88,15 +97,7 @@ Below are the DH parameters:
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. 
 
-Links | alpha(i-1) | a(i-1) | d(i-1) | theta(i)
---- | --- | --- | --- | ---
-0->1 | 0 | 0 | L1 | qi
-1->2 | - pi/2 | L2 | 0 | -pi/2 + q2
-2->3 | 0 | 0 | 0 | 0
-3->4 |  0 | 0 | 0 | 0
-4->5 | 0 | 0 | 0 | 0
-5->6 | 0 | 0 | 0 | 0
-6->EE | 0 | 0 | 0 | 0
+
 
 
 In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
