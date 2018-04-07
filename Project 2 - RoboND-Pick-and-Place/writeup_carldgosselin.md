@@ -202,9 +202,10 @@ T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
 
 Inverse Kinematics (IK) is the opposite of Forward Kinematics (FK).  IK calculates the parameters of each joint in a series of conjoined links based on the end-effectors coordinate position and rotation. 
 
-And here's where you can draw out and show your math for the derivation of your theta angles. 
-
-![alt text][image2]
+<div align=center>
+	<img src="misc_images/InverseKinematics.JPG">
+</div>
+<br>
 
 ### Project Implementation
 
