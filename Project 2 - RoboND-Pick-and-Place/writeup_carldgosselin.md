@@ -68,13 +68,13 @@ Below are a few snippets of code from the kr210.urdf.xacro file:
 The data from the kr210.urdf.xacro file (above) is used to derive the DH parameters.
 
 
-
 Below is a summary of the DH parameter assignment process:
 <br>
 <div align=center>
 	<img src="misc_images/DH_assignment.png">
 </div>
-
+<br> 
+Result...
 <div align=center>
 	<img src="misc_images/DHparameterAssignment.JPG" height="600">	
 </div>
