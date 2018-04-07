@@ -201,13 +201,20 @@ T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and Inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 Inverse Kinematics (IK) is the opposite of Forward Kinematics (FK).  IK calculates the parameters of each joint in a series of conjoined links based on the end-effectors coordinate position and rotation. 
-The IK problem can be decoupled into Inverse Position and Inverse Orientation because of a common intersection point.  The intersecting point is joint_5 and is called the wrist center (WC).  <br>
+The IK problem can be decoupled into **Inverse Position** and **Inverse Orientation** because of a common intersection point.  The intersecting point is joint_5 and is called the wrist center (WC).  <br>
 <br>
 **Solving the Inverse Position** <br>
-
-
-
 <br>
+To solve the inverse position problem.  We need the end-effector position.  This data is provided in the following code:
+```
+    px = req.poses[x].position.x
+    py = req.poses[x].position.y
+    pz = req.poses[x].position.z
+```
+
+
+
+
 **Solving the Inverse Orientation** <br>
 <br>
 
