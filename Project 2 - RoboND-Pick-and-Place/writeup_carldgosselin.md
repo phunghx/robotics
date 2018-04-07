@@ -189,7 +189,7 @@ def DH_T_Matrix (q, alpha, d, a):
 
 
 In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
-<br>
+<br><br>
 The following code is applied to generate a generalized homogeneous transform using only the end-effector pose:
 ```
 T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
