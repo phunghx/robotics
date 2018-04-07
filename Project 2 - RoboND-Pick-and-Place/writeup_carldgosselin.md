@@ -19,7 +19,33 @@ In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a ca
 Below is a code snippet from the kr210.urdf.xacro file:
 
 ```
-placeholder
+ <!-- joints -->
+  <joint name="fixed_base_joint" type="fixed">
+    <parent link="base_footprint"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+  <joint name="joint_1" type="revolute">
+    <origin xyz="0 0 0.33" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 1"/>
+    <limit lower="${-185*deg}" upper="${185*deg}" effort="300" velocity="${123*deg}"/>
+  </joint>
+  <joint name="joint_2" type="revolute">
+    <origin xyz="0.35 0 0.42" rpy="0 0 0"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="${-45*deg}" upper="${85*deg}" effort="300" velocity="${115*deg}"/>
+  </joint>
+  <joint name="joint_3" type="revolute">
+    <origin xyz="0 0 1.25" rpy="0 0 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 1 0"/>
+    <limit lower="${-210*deg}" upper="${(155-90)*deg}" effort="300" velocity="${112*deg}"/>
+  </joint>
 ```
 
 
