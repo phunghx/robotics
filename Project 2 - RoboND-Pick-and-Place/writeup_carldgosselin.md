@@ -80,7 +80,8 @@ Result...
 </div>
 <br>
 
-A few notes...
+A few notes... <br>
+
 a1 is the distance between joint 1 and joint 2 -> 0.35.  This is indicated in the kr210.urdf.xacro file <br>
 ```
 <joint name="joint_2" type="revolute">
