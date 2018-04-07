@@ -76,7 +76,7 @@ Below is a summary of the DH parameter assignment process:
 <br> 
 Result...
 <div align=center>
-	<img src="misc_images/DHparamAssignment.JPG" height="600">	
+	<img src="misc_images/DHparamAssignment2.JPG" height="600">	
 </div>
 <br>
 
@@ -97,7 +97,7 @@ a2 is the distance between joint 2 and joint 3 along the z axis -> 1.25.
 
 
 
-
+<br>
 Below are the DH parameters:
 <br><br>
 <div align=center>
