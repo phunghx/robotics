@@ -98,7 +98,7 @@ a3 is the distance between joint 3 and joint 4 along the z axis -> -0.054.
 <joint name="joint_4" type="revolute">
  <origin xyz="0.96 0 -0.054" rpy="0 0 0"/>
 ```
-d1 is the distane between joint 0 and joint 2 along the z axis.  Therefore the distance between joint 0 to joint 1 and joint 1 to joint 2 is to be added.
+d1 is the distane between joint 0 and joint 2 along the z axis.  Therefore the distance between joint 0 to joint 1 and joint 1 to joint 2 is to be added. <br>
 0.33 + 0.42 -> 0.75.
 ```
 <joint name="joint_1" type="revolute">
@@ -107,7 +107,7 @@ d1 is the distane between joint 0 and joint 2 along the z axis.  Therefore the d
 <joint name="joint_2" type="revolute">
  <origin xyz="0.35 0 0.42" rpy="0 0 0"/>
 ```
-d4 is the distance between joint 3 and joint 5 along the x axis.
+d4 is the distance between joint 3 and joint 5 along the x axis. <br>
 0.96 + 0.54 -> 1.5.
 ```
 <joint name="joint_4" type="revolute">
@@ -116,8 +116,17 @@ d4 is the distance between joint 3 and joint 5 along the x axis.
 <joint name="joint_5" type="revolute">
  <origin xyz="0.54 0 0" rpy="0 0 0"/>
 ```
-
-
+dg is the distance between joint 6 and the end effector along the x axis. <br>
+0.193 + 0.11 -> 0.303
+```
+<joint name="joint_6" type="revolute">
+ <origin xyz="0.193 0 0" rpy="0 0 0"/>
+ ...
+<joint name="gripper_joint" type="fixed">
+ <parent link="link_6"/>
+ <child link="gripper_link"/>
+ <origin xyz="0.11 0 0" rpy="0 0 0"/><!--0.087-->
+```
 
 <br>
 Below are the DH parameters:
