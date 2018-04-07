@@ -129,7 +129,7 @@ dg is the distance between joint 6 and the end effector along the x axis. <br>
 ```
 
 <br>
-Below are the DH parameters:
+Behold, the resulting DH parameters table:
 <br><br>
 <div align=center>
 	<img src="misc_images/DHparameters2.JPG" height="600">
