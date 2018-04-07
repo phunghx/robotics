@@ -162,6 +162,7 @@ The following matrix will create the actual individual transforms:
 Here is the modified DH Transformation matrix in code:
 ```
 # Modified DH Transformation matrix
+
 def DH_T_Matrix (q, alpha, d, a):
     DH_Matrix = Matrix([[             cos(q),          -sin(q),           0,             a],
                         [ sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
