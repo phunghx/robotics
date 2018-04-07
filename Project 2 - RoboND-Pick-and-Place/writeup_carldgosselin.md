@@ -156,10 +156,13 @@ Here is the theoretical equation to create individual transformation matrices.  
 <div align=center>
 	<img src="misc_images/fourtransforms.png">
 </div>
+<br>
+The following matrix will return a homogeneous transformation matrix:
 
-The following matrix will create the actual individual transforms:
-
-[insert pic]
+<div align=center>
+	<img src="misc_images/matrix2.png">
+</div>
+<br>
 
 Here is the modified DH Transformation matrix in code:
 ```
