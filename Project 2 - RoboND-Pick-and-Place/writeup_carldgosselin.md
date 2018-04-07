@@ -64,10 +64,6 @@ Below are a few snippets of code from the kr210.urdf.xacro file:
     </actuator>
   </transmission>
   ...
-  
-  
-  
-  
 ```
 The data from the kr210.urdf.xacro file (above) is used to derive the DH parameters.
 
