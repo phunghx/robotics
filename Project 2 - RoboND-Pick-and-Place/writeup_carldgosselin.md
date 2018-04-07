@@ -98,7 +98,15 @@ a3 is the distance between joint 3 and joint 4 along the z axis -> -0.054.
 <joint name="joint_4" type="revolute">
  <origin xyz="0.96 0 -0.054" rpy="0 0 0"/>
 ```
-
+d1 is the distane between joint 0 and joint 2.  Therefore the distance between joint 0 to joint 1 and joint 1 to joint 2 is to be added.
+0.33 + 0.42 -> 0.75.
+```
+<joint name="joint_1" type="revolute">
+ <origin xyz="0 0 0.33" rpy="0 0 0"/>
+ ...
+ <joint name="joint_2" type="revolute">
+ <origin xyz="0.35 0 0.42" rpy="0 0 0"/>
+```
 
 
 
