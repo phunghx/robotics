@@ -153,7 +153,9 @@ Here is the DH table in python code:
 
 Here is the theoretical equation to create individual transformation matrices.  As you can see, the DH convention uses four individual transforms:
 
-[insert pic]
+<div align=center>
+	<img src="misc_images/fourtransforms.png">
+</div>
 
 The following matrix will create the actual individual transforms:
 
