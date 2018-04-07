@@ -76,14 +76,14 @@ Below is a summary of the DH parameter assignment process:
 <br> 
 Result...
 <div align=center>
-	<img src="misc_images/DHparameterAssignment.JPG" height="600">	
+	<img src="misc_images/DHparamAssignment.JPG" height="600">	
 </div>
 <br>
 
 Below are the DH parameters:
 <br><br>
 <div align=center>
-	<img src="misc_images/DHparametersTable.png" height="600">
+	<img src="misc_images/DHparameters2.png" height="600">
 </div>
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. 
