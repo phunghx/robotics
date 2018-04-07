@@ -85,7 +85,7 @@ Visual for angles:
 </div>
 <br>
 
-Below are the DH parameters for this project:
+Below are the DH parameters:
 <br><br>
 <div align=center>
 	<img src="misc_images/DHparametersTable.png" height="600">
