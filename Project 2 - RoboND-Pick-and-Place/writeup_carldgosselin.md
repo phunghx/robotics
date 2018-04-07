@@ -134,7 +134,7 @@ Behold, the resulting DH parameters table:
 <div align=center>
 	<img src="misc_images/DHparameters2.JPG" height="600">
 </div>
-
+<br>
 Here is the DH table in python code:
 ```
  # DH parameters
