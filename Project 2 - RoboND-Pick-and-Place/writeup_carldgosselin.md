@@ -83,7 +83,7 @@ Result...
 Below are the DH parameters:
 <br><br>
 <div align=center>
-	<img src="misc_images/DHparameters2.png" height="600">
+	<img src="misc_images/DHparameters2.JPG" height="600">
 </div>
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. 
