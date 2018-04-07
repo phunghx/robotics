@@ -87,6 +87,13 @@ a1 is the distance between joint 1 and joint 2 -> 0.35.  This is indicated in th
 <joint name="joint_2" type="revolute">
  <origin xyz="0.35 0 0.42" rpy="0 0 0"/>
  ```
+a2 is the distance between joint 2 and joint 3 along the z axis -> 1.25.
+```
+<joint name="joint_3" type="revolute">
+ <origin xyz="0 0 1.25" rpy="0 0 0"/>
+``` 
+
+
 
 
 
