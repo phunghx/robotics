@@ -16,6 +16,8 @@ In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a ca
 ### Kinematic Analysis
 #### 1. Run the forward_kinematics demo and evaluate the kr210.urdf.xacro file to perform kinematic analysis of Kuka KR210 robot and derive its DH parameters.
 
+The Forward Kinematics (FK) approach calculates the final position and rotation of the end-effector with the parameters of each joint between co-joined links.  The Kuka arm in this project has 6 joints (or 6 degrees of freedom).
+
 Below are a few snippets of code from the kr210.urdf.xacro file:
 
 ```
