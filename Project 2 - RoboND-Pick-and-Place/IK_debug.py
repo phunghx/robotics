@@ -106,7 +106,6 @@ def test_code(test_case):
 
 
     # Extract end-effector
-    # ...
     px = req.poses[x].position.x
     py = req.poses[x].position.y
     pz = req.poses[x].position.z
@@ -117,8 +116,6 @@ def test_code(test_case):
 
 
     # Find EE rotation matrix
-    # ...
-
     r, p, y = symbols('r p y')
 
     ROT_x = Matrix([[1,      0,       0], 
@@ -138,7 +135,6 @@ def test_code(test_case):
 
 
     # More inforation can be found in KR210 forward kinematics section
-
     ROT_Error = ROT_z.subs(y, radians(180)) * ROT_y.subs(p, radians(-90))
     
     ROT_EE = ROT_EE * ROT_Error
@@ -152,7 +148,6 @@ def test_code(test_case):
 
 
     # Calculate joint angles using geometric IK method
-    # ...
     theta1 = atan2(WC[1], WC[0])
 
 
@@ -175,19 +170,9 @@ def test_code(test_case):
 
 
     # Euler angles from rotation matrix
-    # ...
-
     theta4 = atan2(R3_6[2,2], -R3_6[0,2])
     theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
     theta6 = atan2(-R3_6[1,1], R3_6[1,0])
-
-
-    #theta1 = 0
-    #theta2 = 0
-    #theta3 = 0
-    #theta4 = 0
-    #theta5 = 0
-    #theta6 = 0
 
     ## 
     ########################################################################################
@@ -197,7 +182,6 @@ def test_code(test_case):
     ## as the input and output the position of your end effector as your_ee = [x,y,z]
 
     ## (OPTIONAL) YOUR CODE HERE!
-
     FK = T0_EE.evalf(subs={q1: theta1, q2: theta2, q3: theta3, q4: theta4, q5: theta5, q6: theta6})
 
 
