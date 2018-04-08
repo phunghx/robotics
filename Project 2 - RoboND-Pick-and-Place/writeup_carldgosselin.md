@@ -211,18 +211,19 @@ Below are the steps to solving the inverse kinematics problem: <br>
 <div align=center>
 	<img src="misc_images/IK_step2a.png">
 </div>
-<br>
+</br>
 If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE, then this displacement is a simple translation along z6. The magnitude of this displacement, let’s call it d, would depend on the dimensions of the manipulator and are defined in the URDF file. Further, since r13, r23, and r33 define the Z-axis of the EE relative to the base frame, the Cartesian coordinates of the WC is, <br>
 <br>
 <div align=center>
 	<img src="misc_images/IK_step2b.png">
 </div>
-<br>
+</br>
 **Step 3**: find joint variables, q1, q2 and q3, such that the WC has coordinates equal to equation (3). This is the hard step. One way to attack the problem is by repeatedly projecting links onto planes and using trigonometry to solve for joint angles. Unfortunately, there is no generic recipe that works for all manipulators so you will have to experiment. The example in the next section will give you some useful guidance. <br>
 <br>
 **Step 4**: once the first three joint variables are known, perform the calculations via the application of homogeneous transforms up to the WC. <br>
 <br>
 **Step 5**: find a set of Euler angles corresponding to the rotation matrix, <br>
+<br>
 <div align=center>
 	<img src="misc_images/IK_step5.png">
 </div>
