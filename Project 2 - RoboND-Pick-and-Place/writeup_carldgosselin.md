@@ -281,6 +281,4 @@ Here is the code for resolving the **Inverse Kinematics** problem: <br>
 
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. Your code must guide the robot to successfully complete 8/10 pick and place cycles. Briefly discuss the code you implemented and your results. 
 
-
-Here I'll talk about the code, what techniques I used, what worked and why, where the implementation might fail and how I might improve it if I were going to pursue this project further.  
-
+Hello, I need help here.  Not able to get the kuka arm to grip the can.  Do you mind checking my code in IK_server.py?
