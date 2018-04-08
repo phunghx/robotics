@@ -203,27 +203,33 @@ T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
 Inverse Kinematics (IK) is the opposite of Forward Kinematics (FK).  IK calculates the parameters of each joint in a series of conjoined links based on the end-effectors coordinate position and rotation. 
 The IK problem can be decoupled into **Inverse Position** and **Inverse Orientation** because of a common intersection point.  The intersecting point is joint_5 and is called the wrist center (WC).  <br>
 <br>
-**Solving the Inverse Position** <br>
+Below are the steps to solving the inverse kinematics problem:
 <br>
-To solve the inverse position problem.  We need the requested end-effector position.  This data is provided in the following code:
+**Step 1**: is to complete the DH parameter table for the manipulator. Hint: place the origin of frames 4, 5, and 6 coincident with the WC. <br>
+
+**Step 2**: is to find the location of the WC relative to the base frame. Recall that the overall homogeneous transform between the base and end effector has the form,
+<br>
+[show visual]
+<br>
+If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE, then this displacement is a simple translation along z6. The magnitude of this displacement, let’s call it d, would depend on the dimensions of the manipulator and are defined in the URDF file. Further, since r13, r23, and r33 define the Z-axis of the EE relative to the base frame, the Cartesian coordinates of the WC is, <br>
+<br>
+[show visual]
+<br>
+**Step 3**: find joint variables, q1, q2 and q3, such that the WC has coordinates equal to equation (3). This is the hard step. One way to attack the problem is by repeatedly projecting links onto planes and using trigonometry to solve for joint angles. Unfortunately, there is no generic recipe that works for all manipulators so you will have to experiment. The example in the next section will give you some useful guidance. <br>
+<br>
+**Step 4**: once the first three joint variables are known, perform the calculations via the application of homogeneous transforms up to the WC. <br>
+<br>
+**Step 5**: find a set of Euler angles corresponding to the rotation matrix, <br>
+<br>
+[show visual]
+<br>
+**Step 6**: choose the correct solution among the set of possible solutions<br>
+<br>
+Here is the code for resolving the **Inverse Kinematics** problem: <br>
+<br>
 ```
-    px = req.poses[x].position.x
-    py = req.poses[x].position.y
-    pz = req.poses[x].position.z
+# insert code here
 ```
-
-
-
-
-**Solving the Inverse Orientation** <br>
-<br>
-
-
-
-<div align=center>
-	<img src="misc_images/InverseKinematics.JPG">
-</div>
-<br>
 
 ### Project Implementation
 
