@@ -203,7 +203,7 @@ T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
 Inverse Kinematics (IK) is the opposite of Forward Kinematics (FK).  IK calculates the parameters of each joint in a series of conjoined links based on the end-effectors coordinate position and rotation. 
 The IK problem can be decoupled into **Inverse Position** and **Inverse Orientation** because of a common intersection point.  The intersecting point is joint_5 and is called the wrist center (WC).  <br>
 <br>
-Below are the steps to solving the inverse kinematics problem:
+Below are the steps to solving the inverse kinematics problem: <br>
 <br>
 **Step 1**: is to complete the DH parameter table for the manipulator. Hint: place the origin of frames 4, 5, and 6 coincident with the WC. <br>
 
