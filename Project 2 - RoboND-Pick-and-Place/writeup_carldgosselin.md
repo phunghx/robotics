@@ -213,6 +213,7 @@ Below are the steps to solving the inverse kinematics problem: <br>
 </div>
 <br>
 If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE, then this displacement is a simple translation along z6. The magnitude of this displacement, let’s call it d, would depend on the dimensions of the manipulator and are defined in the URDF file. Further, since r13, r23, and r33 define the Z-axis of the EE relative to the base frame, the Cartesian coordinates of the WC is, <br>
+<br>
 <div align=center>
 	<img src="misc_images/IK_step2b.png">
 </div>
