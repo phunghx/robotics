@@ -14,7 +14,7 @@ from geometry_msgs.msg import Pose
 from mpmath import *
 from sympy import *
 
-
+# note: initializing variables outside of IK_server() as setting up variables in Sympy is 'muy expensivo'
 # Create symbols. Define constants
 d1, d2, d3, d4, d5, d6, d7 = symbols ('d1:8') # link offset
 a0, a1, a2, a3, a4, a5, a6 = symbols ('a0:7') # link length
