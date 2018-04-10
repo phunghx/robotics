@@ -96,7 +96,7 @@ Rot_z = Matrix([[cos(y), -sin(y), 0],
 R0_3 = T0_3[:3,:3]  # Rotation from base to joint 3?
 
 # apply inverst matrix rule to get the correct information
-R3_0 - R0_3.inv()
+R3_0 = R0_3.inv()
 
 # Transformation matrix to get to R36
 R3_6 = simplify(R3_0 * Rot_z * Rot_y * Rot_x)
