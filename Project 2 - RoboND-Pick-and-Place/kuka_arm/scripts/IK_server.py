@@ -15,14 +15,14 @@ from mpmath import *
 from sympy import *
 
 
-# Create symbols
+# Create symbols. Define constants
 d1, d2, d3, d4, d5, d6, d7 = symbols ('d1:8') # link offset
 a0, a1, a2, a3, a4, a5, a6 = symbols ('a0:7') # link length
 alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7') # twist angle
-q1, q2, q3, q4, q5, q6, q7 = symbols ('q1:8') # joint angle symbols
+q1, q2, q3, q4, q5, q6, q7 = symbols ('q1:8') # joint angle symbols (theta_i)
 
 
-# Create Modified DH parameters
+# Create Modified DH parameters (KUKA KR210 DH Parameters)
 DH_Table = { alpha0:      0, a0:      0, d1:  0.75, q1:          q1,
              alpha1: -pi/2., a1:   0.35, d2:     0, q2: -pi/2. + q2,
              alpha2:      0, a2:   1.25, d3:     0, q3:          q3,
