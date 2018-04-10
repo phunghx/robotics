@@ -60,22 +60,46 @@ T0_2 = simplify(T0_1 * T1_2) # Transformation from base link to joint 2.  Not su
 T0_3 = simplify(T0_2 * T2_3) # Transformation from base link to joint 2.  Not sure if I need this yet.
 
 
+# Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
+R_z = Matrix([[	cos(np.pi), -sin(np.pi), 	0, 		0],
+         	  [	sin(np.pi),	 cos(np.pi),	0,		0],
+         	  [			 0,		 	  0,	1, 		0],
+         	  [			 0,			  0,	0,		1]
+         	  ])
+
+R_y = Matrix([[	cos(-np.pi/2), 		  0, 	sin(-np.pi/2), 		0],
+         	  [				0,	 	  1,				0,		0],
+         	  [-sin(-np.pi/2),		  0,	cos(-np.pi/2), 		0],
+         	  [			 0,			  0,				0,		1]
+         	  ])
+
+# Correction matrix
+R_corr = simplify(R_z * R_y) # simplify() returns the simplest form of an expression
+
+
 # Extract rotation matrices from the transformation matrices
 r, p, y = symbols('r p y')
 
-ROT_x = Matrix([[1,      0,       0], 
+Rot_x = Matrix([[1,      0,       0], 
                 [0, cos(r), -sin(r)],
                 [0, sin(r), cos(r)]])  # ROLL
 
-ROT_y = Matrix([[cos(p),  0, sin(p)],
+Rot_y = Matrix([[cos(p),  0, sin(p)],
                 [0,       1,      0],
                 [-sin(p), 0, cos(p)]]) # Pitch
 
-ROT_z = Matrix([[cos(y), -sin(y), 0],
+Rot_z = Matrix([[cos(y), -sin(y), 0],
                 [sin(y),  cos(y), 0],
                 [     0,       0, 1]])   # yaw
 
-ROT_EE = ROT_z * ROT_y * ROT_x
+# ROT_EE = ROT_z * ROT_y * ROT_x  # not using for now
+R0_3 = T0_3[:3,:3]  # Rotation from base to joint 3?
+
+# apply inverst matrix rule to get the correct information
+R3_0 - R0_3.inv()
+
+# Transformation matrix to get to R36
+R3_6 = simplify(R3_0 * Rot_z * Rot_y * Rot_x)
 
 
 def handle_calculate_IK(req):
