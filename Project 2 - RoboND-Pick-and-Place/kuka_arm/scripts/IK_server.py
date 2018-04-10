@@ -54,10 +54,10 @@ T2_3  = TF_Matrix(alpha2, a2, d3, q3).subs(DH_Table)
 # T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table) # Not using for now
 # T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE # Not using for now
 
+
 # Transformation for base link to joint 2 and joint 3
 T0_2 = simplify(T0_1 * T1_2) # Transformation from base link to joint 2.  Not sure if I need this yet.
 T0_3 = simplify(T0_2 * T2_3) # Transformation from base link to joint 2.  Not sure if I need this yet.
-
 
 
 # Extract rotation matrices from the transformation matrices
