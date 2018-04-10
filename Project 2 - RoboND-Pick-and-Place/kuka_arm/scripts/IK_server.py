@@ -15,7 +15,7 @@ from mpmath import *
 from sympy import *
 
 
- # Create symbols
+# Create symbols
 d1, d2, d3, d4, d5, d6, d7 = symbols ('d1:8') # link offset
 a0, a1, a2, a3, a4, a5, a6 = symbols ('a0:7') # link length
 alpha0, alpha1, alpha2, alpha3, alpha4, alpha5, alpha6 = symbols('alpha0:7') # twist angle
