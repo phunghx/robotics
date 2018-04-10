@@ -136,7 +136,7 @@ def handle_calculate_IK(req):
                       [py],
                       [pz]])
 
-        WC = EE - (0.303) * ROT_EE[:,2] # d7 = 0.303
+        WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
 	    
 	    
 	    # Theta 1, 2, 3
@@ -144,9 +144,9 @@ def handle_calculate_IK(req):
 	    theta1 = atan2(WC[1], WC[0])
 
         # SSS triangle for theta 2 and theta 3
-        side_a = 1.501 # d4
+        side_a = 1.501 # DH_Table[d4]
         side_b = sqrt(pow((sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
-        side_c = 1.25 #a2
+        side_c = 1.25 # DH_Table[a2]
 
         angle_a = acos((side_b * side_b + side_c * side_c - side_a * side_a) / (2 * side_b * side_c))
         angle_b = acos((side_a * side_a + side_c * side_c - side_b * side_b) / (2 * side_a * side_c))
@@ -155,10 +155,13 @@ def handle_calculate_IK(req):
         theta2 = pi/2 - angle_a - atan2(WC[2] - 0.75, sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35)
         theta3 = pi/2 - (angle_b + 0.036)  # 0.036 accounts for sag on link4 of -0.054m
 
-        R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
-        R0_3 = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
-    
-        R3_6 = R0_3.inv("LU")*ROT_EE
+		# Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
+		# We now have the the theta for these joints that define the pose of the wrist center
+        # R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3] # Don't think I need this
+        
+        # The inverse of R0_3 is R3_0
+        R0_3_eval = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
+        R3_6 = R0_3_eval.transpose() * ROT_EE
 
 
 		# Theta 3, 4, 5
