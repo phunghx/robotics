@@ -23,13 +23,13 @@ q1, q2, q3, q4, q5, q6, q7 = symbols ('q1:8') # joint angle symbols (theta_i)
 
 
 # Create Modified DH parameters (KUKA KR210 DH Parameters)
-DH_Table = { alpha0:      0, a0:      0, d1:  0.75, q1:          q1,
-             alpha1: -pi/2., a1:   0.35, d2:     0, q2: -pi/2. + q2,
-             alpha2:      0, a2:   1.25, d3:     0, q3:          q3,
-             alpha3: -pi/2., a3: -0.054, d4:   1.5, q4:          q4,
-             alpha4:  pi/2., a4:      0, d5:     0, q5:          q5,
-             alpha5: -pi/2., a5:      0, d6:     0, q6:          q6,
-             alpha6:      0, a6:      0, d7: 0.303, q7:           0}
+DH_Table = { alpha0:      0, a0:      0, d1:  0.75, q1:          q1, # i = 1
+             alpha1: -pi/2., a1:   0.35, d2:     0, q2: -pi/2. + q2, # i = 2
+             alpha2:      0, a2:   1.25, d3:     0, q3:          q3, # i = 3
+             alpha3: -pi/2., a3: -0.054, d4:   1.5, q4:          q4, # i = 4
+             alpha4:  pi/2., a4:      0, d5:     0, q5:          q5, # i = 5
+             alpha5: -pi/2., a5:      0, d6:     0, q6:          q6, # i = 6
+             alpha6:      0, a6:      0, d7: 0.303, q7:           0} # i = 7
 
 	    
 # Define Modified DH Transformation matrix
@@ -127,8 +127,7 @@ def handle_calculate_IK(req):
 
             ### Your IK code here
 	    # Compensate for rotation discrepancy between DH parameters and Gazebo
-	    # More inforation can be found in KR210 forward kinematics section
-        ROT_Error = ROT_z.subs(y, radians(180)) * ROT_y.subs(p, radians(-90))
+        ROT_Error = Rot_z.subs(y, radians(180)) * Rot_y.subs(p, radians(-90))
     
         ROT_EE = ROT_EE * ROT_Error
         ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
@@ -137,16 +136,17 @@ def handle_calculate_IK(req):
                       [py],
                       [pz]])
 
-        WC = EE - (0.303) * ROT_EE[:,2]
+        WC = EE - (0.303) * ROT_EE[:,2] # d7 = 0.303
 	    
 	    
+	    # Theta 1, 2, 3
 	    # Calculate joint angles using Geometric IK method
 	    theta1 = atan2(WC[1], WC[0])
 
         # SSS triangle for theta 2 and theta 3
-        side_a = 1.501
+        side_a = 1.501 # d4
         side_b = sqrt(pow((sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
-        side_c = 1.25
+        side_c = 1.25 #a2
 
         angle_a = acos((side_b * side_b + side_c * side_c - side_a * side_a) / (2 * side_b * side_c))
         angle_b = acos((side_a * side_a + side_c * side_c - side_b * side_b) / (2 * side_a * side_c))
@@ -160,10 +160,13 @@ def handle_calculate_IK(req):
     
         R3_6 = R0_3.inv("LU")*ROT_EE
 
+
+		# Theta 3, 4, 5
         # Euler angles from rotation matrix
         theta4 = atan2(R3_6[2,2], -R3_6[0,2])
         theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
         theta6 = atan2(-R3_6[1,1], R3_6[1,0])
+            
             ###
 
             # Populate response for the IK request
