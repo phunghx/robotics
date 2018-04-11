@@ -124,7 +124,7 @@ def handle_calculate_IK(req):
 	    
         # Theta 1, 2, 3
         # Calculate joint angles using Geometric IK method
-        theta1 = atan2(WC[1], WC[0])
+        theta1 = atan2(WC[1], WC[0])  # theta1 = atan2(y,x)
 
         # SSS triangle for theta 2 and theta 3
         side_a = 1.501 # DH_Table[d4]
