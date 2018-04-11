@@ -319,6 +319,7 @@ Here is the Law of Cosine equation that is used: <br>
 </div>
 </br>
 Here is the code: <br>
+<br>
 
 ```
 # Triangle for theta 2 and theta 3
@@ -336,6 +337,7 @@ theta3 = pi/2 - (angle_b + 0.036)            # 0.036 accounts for sag on link4 o
 
 <br>
 Theta 4, 5, 6 - equation and explanation: <br>
+<br>
 
 ```
 # Theta 4, 5, 6
