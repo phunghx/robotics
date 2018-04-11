@@ -54,7 +54,7 @@ T4_5  = TF_Matrix(alpha4, a4, d5, q5).subs(DH_Table)
 T5_6  = TF_Matrix(alpha5, a5, d6, q6).subs(DH_Table)
 T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table)
 
-# Generating a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
+# Generating a generalized homogeneous transform between base_link and gripper_link using only end-effector (gripper) pose.
 T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
 
