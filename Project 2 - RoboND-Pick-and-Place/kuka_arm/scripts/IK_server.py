@@ -45,7 +45,7 @@ def TF_Matrix(alpha, a, d, q):
 # note:  I'm learning through feedback that using subs() is slower than using NumPy and ScipY.  
 #        subs() and evalf() is from SymPy and is usually used for simple evaluation.  
 #        subs() and evalf() slow down with larger calculations (moreso than NumPy and SciPy). 
-#        I'll keep the subs() function for this project and consider changing the next.  
+#        I'll keep the subs() function for this project and consider changing next time.  
 T0_1  = TF_Matrix(alpha0, a0, d1, q1).subs(DH_Table)
 T1_2  = TF_Matrix(alpha1, a1, d2, q2).subs(DH_Table)
 T2_3  = TF_Matrix(alpha2, a2, d3, q3).subs(DH_Table)
@@ -59,8 +59,8 @@ T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
 
 # Transformation for base link to joint 2 and joint 3
-T0_2 = simplify(T0_1 * T1_2) # Transformation from base link to joint 2.  Not sure if I need this yet.
-T0_3 = simplify(T0_2 * T2_3) # Transformation from base link to joint 2.  Not sure if I need this yet.
+T0_2 = simplify(T0_1 * T1_2)
+T0_3 = simplify(T0_2 * T2_3)
 
 
 # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
@@ -76,7 +76,7 @@ R_y = Matrix([[  cos(-np.pi/2), 0, sin(-np.pi/2), 0],
               [              0, 0,             0, 1]
               ])
 
-# Correction matrix
+# Setting up the correction matrix
 R_corr = simplify(R_z * R_y)      # simplify() returns the simplest form of an expression
 
 
@@ -93,10 +93,10 @@ Rot_y = Matrix([[cos(p),  0, sin(p)],
 
 Rot_z = Matrix([[cos(y), -sin(y), 0],
                 [sin(y),  cos(y), 0],
-                [     0,       0, 1]])   # yaw
+                [     0,       0, 1]]) # yaw
 
 # ROT_EE = ROT_z * ROT_y * ROT_x  # not using for now
-R0_3 = T0_3[:3,:3]  # Rotation from base to joint 3?
+R0_3 = T0_3[:3,:3]
 
 # apply inverst matrix rule to get the correct information
 R3_0 = R0_3.inv()
@@ -128,8 +128,10 @@ def handle_calculate_IK(req):
                 [req.poses[x].orientation.x, req.poses[x].orientation.y,
                     req.poses[x].orientation.z, req.poses[x].orientation.w])
 
-            ### Your IK code here
+    	### Your IK code here
 	    # Compensate for rotation discrepancy between DH parameters and Gazebo
+        # R_corr = simplify(R_z * R_y)  # Previously setup (around line 80)
+        
         ROT_Error = Rot_z.subs(y, radians(180)) * Rot_y.subs(p, radians(-90))
     
         ROT_EE = ROT_EE * ROT_Error
@@ -172,11 +174,9 @@ def handle_calculate_IK(req):
         theta4 = atan2(R3_6[2,2], -R3_6[0,2])
         theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
         theta6 = atan2(-R3_6[1,1], R3_6[1,0])
-            
-            ###
 
-            # Populate response for the IK request
-            # In the next line replace theta1,theta2...,theta6 by your joint angle variables
+        # Populate response for the IK request
+        # In the next line replace theta1,theta2...,theta6 by your joint angle variables
 	    joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
 	    joint_trajectory_list.append(joint_trajectory_point)
 
