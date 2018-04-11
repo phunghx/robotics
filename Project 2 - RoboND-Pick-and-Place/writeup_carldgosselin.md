@@ -205,7 +205,8 @@ The IK problem can be decoupled into **Inverse Position** and **Inverse Orientat
 <br>
 Below are the steps to solving the inverse kinematics problem: <br>
 <br>
-**Step 1**: is to complete the DH parameter table for the manipulator. Hint: place the origin of frames 4, 5, and 6 coincident with the WC. <br>
+**Step 1**: is to complete the DH parameter table for the manipulator. <br>
+Hint: place the origin of frames 4, 5, and 6 coincident with the WC. <br>
 
 **Step 2**: is to find the location of the WC relative to the base frame. Recall that the overall homogeneous transform between the base and end effector has the form,
 <div align=center>
