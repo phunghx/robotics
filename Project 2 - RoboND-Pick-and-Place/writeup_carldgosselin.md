@@ -198,7 +198,8 @@ The following code is applied to generate a generalized homogeneous transform us
 T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 ```
 
-An adjustment is required to address a discrepancy between the DH table and the URDF reference frame.  The code below creates the correction matrix:
+An adjustment is required to address a discrepancy between the DH table and the URDF (Universal Robotic Description Format) reference frame. <br>
+The code below creates the correction matrix:
 ```
 # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
 R_z = Matrix([[ cos(np.pi), -sin(np.pi), 0, 0],
