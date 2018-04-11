@@ -286,7 +286,7 @@ Using the image below as a reference, we use Zc (which is the WC line) to calcul
 </div>
 </br>
 
-The equation below is shown a second time to show the formula for calculating the wrist center (WC):
+The equation below is shown a second time to display the formula for calculating the wrist center (WC):
 <br>
 <div align=center>
 	<img src="misc_images/IK_step2b.png">
