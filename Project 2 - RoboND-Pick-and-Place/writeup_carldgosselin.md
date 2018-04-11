@@ -282,7 +282,7 @@ Theta 1 - equation and explanation: <br>
 Using the image below as a reference, we use the WC axis to calculate the theta1 angle<br>
 <br>
 <div align=center>
-	<img src="misc_images/theta1.png">
+	<img src="misc_images/theta1.png" height="600">
 </div>
 </br>
 
