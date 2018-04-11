@@ -305,12 +305,12 @@ theta1 = atan2(WC[1], WC[0]) # theta1 = atan2(y,x)
 Theta 2 & 3 - equation and explanation: <br>
 <br>
 <div align=center>
-	<img src="misc_images/cosinePic.png">
+	<img src="misc_images/cosinePic.png" height="600">
 </div>
 </br>
 <br>
 <div align=center>
-	<img src="misc_images/cosineLaw.png">
+	<img src="misc_images/cosineLaw.png" height="200">
 </div>
 </br>
 
