@@ -64,20 +64,20 @@ T0_3 = simplify(T0_2 * T2_3) # Transformation from base link to joint 2.  Not su
 
 
 # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
-R_z = Matrix([[	cos(np.pi), -sin(np.pi), 	0, 		0],
-         	  [	sin(np.pi),	 cos(np.pi),	0,		0],
-         	  [			 0,		 	  0,	1, 		0],
-         	  [			 0,			  0,	0,		1]
-         	  ])
+R_z = Matrix([[ cos(np.pi), -sin(np.pi), 0, 0],
+              [ sin(np.pi),  cos(np.pi), 0, 0],
+              [          0,           0, 1, 0],
+              [          0,           0, 0, 1]
+              ])
 
-R_y = Matrix([[	cos(-np.pi/2), 		  0, 	sin(-np.pi/2), 		0],
-         	  [				0,	 	  1,				0,		0],
-         	  [-sin(-np.pi/2),		  0,	cos(-np.pi/2), 		0],
-         	  [			 0,			  0,				0,		1]
-         	  ])
+R_y = Matrix([[  cos(-np.pi/2), 0, sin(-np.pi/2), 0],
+              [              0, 1,             0, 0],
+              [ -sin(-np.pi/2), 0, cos(-np.pi/2), 0],
+              [              0, 0,             0, 1]
+              ])
 
 # Correction matrix
-R_corr = simplify(R_z * R_y) # simplify() returns the simplest form of an expression
+R_corr = simplify(R_z * R_y)      # simplify() returns the simplest form of an expression
 
 
 # Extract rotation matrices from the transformation matrices

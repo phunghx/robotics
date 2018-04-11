@@ -213,8 +213,8 @@ R_y = Matrix([[  cos(-np.pi/2), 0, sin(-np.pi/2), 0],
               [              0, 0,             0, 1]
               ])
 
-# Correction matrix
-R_corr = simplify(R_z * R_y) # simplify() returns the simplest form of an expression
+# Setting up the correction matrix
+R_corr = simplify(R_z * R_y)      # simplify() returns the simplest form of an expression
 ```
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and Inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
