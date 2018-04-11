@@ -304,10 +304,14 @@ theta1 = atan2(WC[1], WC[0]) # theta1 = atan2(y,x)
 <br>
 Theta 2 & 3 - equation and explanation: <br>
 <br>
+Because we have information about WC, we are able to use the Law of Cosine to calculate theta 2 & 3.  <br>
+<br>
+Below is a visual of the data required to capture theta 2 and theta 3: <br>
 <div align=center>
 	<img src="misc_images/cosinePic.png" height="400">
 </div>
 </br>
+Here is Law of Cosine equation: <br>
 <br>
 <div align=center>
 	<img src="misc_images/cosineLaw.png" height="100">
