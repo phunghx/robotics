@@ -304,12 +304,19 @@ theta3 = pi/2 - (angle_b + 0.036)            # 0.036 accounts for sag on link4 o
 ```
 
 <br>
-Theta 4 - equation and explanation: <br>
-<br>
-Theta 5 - equation and explanation (including the two options): <br>
-<br>
-Theta 6 - equation and explanation: <br>
-<br> 
+Theta 4, 5, 6 - equation and explanation: <br>
+```
+# Theta 4, 5, 6
+# Euler angles from rotation matrix
+theta4 = atan2(R3_6[2,2], -R3_6[0,2])
+theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
+theta6 = atan2(-R3_6[1,1], R3_6[1,0])
+
+# Populate response for the IK request
+# In the next line replace theta1,theta2...,theta6 by your joint angle variables
+joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
+joint_trajectory_list.append(joint_trajectory_point)
+```
 
 Here is the code for resolving the **Inverse Kinematics** problem: <br>
 <br>
