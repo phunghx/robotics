@@ -279,27 +279,23 @@ If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE
 Here is the code for resolving the **Inverse Kinematics** problem: <br>
 <br>
 ```
- # Compensate for rotation discrepancy between DH parameters and Gazebo
-	    # More inforation can be found in KR210 forward kinematics section
-        ROT_Error = ROT_z.subs(y, radians(180)) * ROT_y.subs(p, radians(-90))
-    
-        ROT_EE = ROT_EE * ROT_Error
+ ### Your IK code here
+        # Compensate for rotation discrepancy between DH parameters and Gazebo
+        # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
+        
+        EE = Matrix([px, py, pz])
         ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
-
-        EE = Matrix ([[px],
-                      [py],
-                      [pz]])
-
-        WC = EE - (0.303) * ROT_EE[:,2]
+        WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
 	    
 	    
-	    # Calculate joint angles using Geometric IK method
-	    theta1 = atan2(WC[1], WC[0])
+        # Theta 1, 2, 3
+        # Calculate joint angles using Geometric IK method
+        theta1 = atan2(WC[1], WC[0])
 
         # SSS triangle for theta 2 and theta 3
-        side_a = 1.501
+        side_a = 1.501 # DH_Table[d4]
         side_b = sqrt(pow((sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
-        side_c = 1.25
+        side_c = 1.25 # DH_Table[a2]
 
         angle_a = acos((side_b * side_b + side_c * side_c - side_a * side_a) / (2 * side_b * side_c))
         angle_b = acos((side_a * side_a + side_c * side_c - side_b * side_b) / (2 * side_a * side_c))
@@ -308,15 +304,26 @@ Here is the code for resolving the **Inverse Kinematics** problem: <br>
         theta2 = pi/2 - angle_a - atan2(WC[2] - 0.75, sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35)
         theta3 = pi/2 - (angle_b + 0.036)  # 0.036 accounts for sag on link4 of -0.054m
 
+        # Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
+        # We now have the the theta for these joints that define the pose of the wrist center
         R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
-        R0_3 = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
-    
-        R3_6 = R0_3.inv("LU")*ROT_EE
+        R0_3_eval = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
+        R3_6 = R0_3_eval.transpose() * ROT_EE
 
+
+        # Theta 3, 4, 5
         # Euler angles from rotation matrix
         theta4 = atan2(R3_6[2,2], -R3_6[0,2])
         theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
         theta6 = atan2(-R3_6[1,1], R3_6[1,0])
+
+        # Populate response for the IK request
+        # In the next line replace theta1,theta2...,theta6 by your joint angle variables
+        joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
+        joint_trajectory_list.append(joint_trajectory_point)
+
+        rospy.loginfo("length of Joint Trajectory List: %s" % len(joint_trajectory_list))
+        return CalculateIKResponse(joint_trajectory_list)
 ```
 
 ### Project Implementation
