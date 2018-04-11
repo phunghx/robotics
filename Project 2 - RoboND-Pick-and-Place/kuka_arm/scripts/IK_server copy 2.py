@@ -58,6 +58,20 @@ T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table)
 T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
 
+# Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
+R_z = Matrix([[ cos(np.pi), -sin(np.pi), 0, 0],
+              [ sin(np.pi),  cos(np.pi), 0, 0],
+              [          0,           0, 1, 0],
+              [          0,           0, 0, 1]
+              ])
+
+R_y = Matrix([[  cos(-np.pi/2), 0, sin(-np.pi/2), 0],
+              [              0, 1,             0, 0],
+              [ -sin(-np.pi/2), 0, cos(-np.pi/2), 0],
+              [              0, 0,             0, 1]
+              ])
+
+
 # Extract rotation matrices from the transformation matrices
 r, p, y = symbols('r p y')
 
@@ -114,7 +128,6 @@ def handle_calculate_IK(req):
 
     	### Your IK code here
         # Compensate for rotation discrepancy between DH parameters and Gazebo
-        # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
         # ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
 
         EE = Matrix ([[px],
