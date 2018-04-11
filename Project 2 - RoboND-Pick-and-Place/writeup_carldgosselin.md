@@ -198,6 +198,25 @@ The following code is applied to generate a generalized homogeneous transform us
 T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 ```
 
+An adjustment is required to address a discrepancy between the DH table and the URDF reference frame.  The code below creates the correction matrix:
+```
+# Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
+R_z = Matrix([[	cos(np.pi), -sin(np.pi), 	0, 		0],
+         	  [	sin(np.pi),	 cos(np.pi),	0,		0],
+         	  [			 0,		 	  0,	1, 		0],
+         	  [			 0,			  0,	0,		1]
+         	  ])
+
+R_y = Matrix([[	cos(-np.pi/2), 		  0, 	sin(-np.pi/2), 		0],
+         	  [				0,	 	  1,				0,		0],
+         	  [-sin(-np.pi/2),		  0,	cos(-np.pi/2), 		0],
+         	  [			 0,			  0,				0,		1]
+         	  ])
+
+# Correction matrix
+R_corr = simplify(R_z * R_y) # simplify() returns the simplest form of an expression
+```
+
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and Inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
 
 Inverse Kinematics (IK) is the opposite of Forward Kinematics (FK).  IK calculates the parameters of each joint in a series of conjoined links based on the end-effectors coordinate position and rotation. 
