@@ -307,6 +307,7 @@ Theta 2 & 3 - equation and explanation: <br>
 Because we have information about WC, we are able to use the Law of Cosine to calculate theta 2 & 3.  <br>
 <br>
 Below is a visual of the data required to capture theta 2 and theta 3: <br>
+<br>
 <div align=center>
 	<img src="misc_images/cosinePic.png" height="400">
 </div>
