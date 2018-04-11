@@ -305,6 +305,7 @@ theta3 = pi/2 - (angle_b + 0.036)            # 0.036 accounts for sag on link4 o
 
 <br>
 Theta 4, 5, 6 - equation and explanation: <br>
+
 ```
 # Theta 4, 5, 6
 # Euler angles from rotation matrix
