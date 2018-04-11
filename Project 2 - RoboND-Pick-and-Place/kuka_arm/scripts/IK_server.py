@@ -42,7 +42,7 @@ def TF_Matrix(alpha, a, d, q):
 
 
 # Create individual transformation matrices
-# note:  I'm learning through feedback that using subs() is slower than using NumPy and ScipY.  
+# note:  I'm learning through feedback that using subs() is slower than using NumPy and SciPy.  
 #        subs() and evalf() is from SymPy and is usually used for simple evaluation.  
 #        subs() and evalf() slow down with larger calculations (moreso than NumPy and SciPy). 
 #        I'll keep the subs() function for this project and consider changing next time.  
