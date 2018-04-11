@@ -140,14 +140,14 @@ Behold, the resulting DH parameters table:
 
 Here is the DH table in python code:
 ```
-# Create Modified DH parameters (KUKA KR210 DH Parameters)
-DH_Table = { alpha0:      0, a0:      0, d1:  0.75, q1:          q1, # i = 1
-             alpha1: -pi/2., a1:   0.35, d2:     0, q2: -pi/2. + q2, # i = 2
-             alpha2:      0, a2:   1.25, d3:     0, q3:          q3, # i = 3
-             alpha3: -pi/2., a3: -0.054, d4:   1.5, q4:          q4, # i = 4
-             alpha4:  pi/2., a4:      0, d5:     0, q5:          q5, # i = 5
-             alpha5: -pi/2., a5:      0, d6:     0, q6:          q6, # i = 6
-             alpha6:      0, a6:      0, d7: 0.303, q7:           0} # i = 7
+ # DH parameters
+    s = {alpha0: 0,     a0:   0,    d1: 0.75,    q1: q1,
+         alpha1: -pi/2, a1: 0.35,   d2: 0,       q2: q2 -pi/2,  
+         alpha2: 0,     a2: 1.25,   d3: 0,       q3: q3,
+         alpha3: -pi/2, a3: -0.054, d4: 1.5,     q4: q4,
+         alpha4: pi/2,  a4:   0,    d5: 0,       q5: q5,
+         alpha5: -pi/2, a5:   0,    d6: 0,       q6: q6,
+         alpha6: 0,     a6:   0,    d7: 0.303,   q7: 0}
 ```
 
 #### 2. Using the DH parameter table you derived earlier, create individual transformation matrices about each joint. 
@@ -168,34 +168,33 @@ The following matrix will return a homogeneous transformation matrix:
 
 Here is the modified DH Transformation matrix in code:
 ```
-# Define Modified DH Transformation matrix
-def TF_Matrix(alpha, a, d, q):
-    TF = Matrix([[           cos(q),           -sin(q),           0,           	 a],
-                [ sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
-                [ sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],
-                [                 0,                 0,          0,              1]])
-    return TF
+# Modified DH Transformation matrix
+
+def DH_T_Matrix (q, alpha, d, a):
+    DH_Matrix = Matrix([[             cos(q),          -sin(q),           0,             a],
+                        [ sin(q)*cos(alpha), cos(q)*cos(alpha), -sin(alpha), -sin(alpha)*d],
+                        [ sin(q)*sin(alpha), cos(q)*sin(alpha),  cos(alpha),  cos(alpha)*d],
+                        [                 0,                 0,           0,             1]])
+    return DH_Matrix
 
 
 # Create individual transformation matrices
-# note:  I'm learning through feedback that using subs() is slower than using NumPy and ScipY.  
-#        subs() and evalf() is from SymPy and is usually used for simple evaluation.  
-#        subs() and evalf() slow down with larger calculations (moreso than NumPy and SciPy).   
-T0_1  = TF_Matrix(alpha0, a0, d1, q1).subs(DH_Table)
-T1_2  = TF_Matrix(alpha1, a1, d2, q2).subs(DH_Table)
-T2_3  = TF_Matrix(alpha2, a2, d3, q3).subs(DH_Table)
-T3_4  = TF_Matrix(alpha3, a3, d4, q4).subs(DH_Table)
-T4_5  = TF_Matrix(alpha4, a4, d5, q5).subs(DH_Table)
-T5_6  = TF_Matrix(alpha5, a5, d6, q6).subs(DH_Table)
-T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table)
 
+    T0_1 = DH_T_Matrix(q1, alpha0, d1, a0).subs(s)
+    T1_2 = DH_T_Matrix(q2, alpha1, d2, a1).subs(s)
+    T2_3 = DH_T_Matrix(q3, alpha2, d3, a2).subs(s)
+    T3_4 = DH_T_Matrix(q4, alpha3, d4, a3).subs(s)
+    T4_5 = DH_T_Matrix(q5, alpha4, d5, a4).subs(s)
+    T5_6 = DH_T_Matrix(q6, alpha5, d6, a5).subs(s)
+    T6_G = DH_T_Matrix(q7, alpha6, d7, a6).subs(s)
 ```
+
 
 In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
 <br><br>
 The following code is applied to generate a generalized homogeneous transform using only the end-effector pose:
 ```
-T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
+T0_G = DH_T_Matrix(T0_1*T1_2*T2_3*T3_4*T4_5*T5_6*T6_G)
 ```
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and Inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.

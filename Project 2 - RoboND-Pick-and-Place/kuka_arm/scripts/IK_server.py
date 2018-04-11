@@ -48,11 +48,13 @@ def TF_Matrix(alpha, a, d, q):
 T0_1  = TF_Matrix(alpha0, a0, d1, q1).subs(DH_Table)
 T1_2  = TF_Matrix(alpha1, a1, d2, q2).subs(DH_Table)
 T2_3  = TF_Matrix(alpha2, a2, d3, q3).subs(DH_Table)
-# T3_4  = TF_Matrix(alpha3, a3, d4, q4).subs(DH_Table) # Not needed? IK functionality will address the last 3 joints?
-# T4_5  = TF_Matrix(alpha4, a4, d5, q5).subs(DH_Table) # Not needed? IK functionality will address the last 3 joints?
-# T5_6  = TF_Matrix(alpha5, a5, d6, q6).subs(DH_Table) # Not needed? IK functionality will address the last 3 joints?
-# T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table) # Not using for now
-# T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE # Not using for now
+T3_4  = TF_Matrix(alpha3, a3, d4, q4).subs(DH_Table)
+T4_5  = TF_Matrix(alpha4, a4, d5, q5).subs(DH_Table)
+T5_6  = TF_Matrix(alpha5, a5, d6, q6).subs(DH_Table)
+T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table)
+
+# Generating a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
+T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
 
 # Transformation for base link to joint 2 and joint 3
