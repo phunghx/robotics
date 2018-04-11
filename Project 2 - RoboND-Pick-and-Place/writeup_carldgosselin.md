@@ -279,6 +279,13 @@ If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE
 Derive the equations for individual joint angles<br>
 <br>
 Theta 1 - equation and explanation: <br>
+```
+# First we find the wrist center (joint 5)
+WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
+	    
+# Then we can calculate theta 1
+theta1 = atan2(WC[1], WC[0])
+```
 <br>
 Theta 2 - equation and explanation: <br>
 <br>
