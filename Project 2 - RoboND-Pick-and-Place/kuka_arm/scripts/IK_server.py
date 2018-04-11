@@ -14,7 +14,7 @@ from geometry_msgs.msg import Pose
 from mpmath import *
 from sympy import *
 
-# note: initializing variables outside of IK_server() as setting up variables in SymPy is 'muy expensivo'
+# note: initializing variables outside of IK_server(). This is because setting up variables in SymPy is 'muy expensivo'
 # Create symbols. Define constants
 d1, d2, d3, d4, d5, d6, d7 = symbols ('d1:8') # link offset
 a0, a1, a2, a3, a4, a5, a6 = symbols ('a0:7') # link length
@@ -98,7 +98,7 @@ Rot_z = Matrix([[cos(y), -sin(y), 0],
 # ROT_EE = ROT_z * ROT_y * ROT_x  # not using for now
 R0_3 = T0_3[:3,:3]
 
-# apply inverst matrix rule to get the correct information
+# apply invert matrix rule to get the correct information
 R3_0 = R0_3.inv()
 
 # Transformation matrix to get to R36
@@ -129,7 +129,7 @@ def handle_calculate_IK(req):
                     req.poses[x].orientation.z, req.poses[x].orientation.w])
 
     	### Your IK code here
-	    # Compensate for rotation discrepancy between DH parameters and Gazebo
+        # Compensate for rotation discrepancy between DH parameters and Gazebo
         # R_corr = simplify(R_z * R_y)  # Previously setup (around line 80)
         
         ROT_Error = Rot_z.subs(y, radians(180)) * Rot_y.subs(p, radians(-90))
@@ -144,9 +144,9 @@ def handle_calculate_IK(req):
         WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
 	    
 	    
-	    # Theta 1, 2, 3
-	    # Calculate joint angles using Geometric IK method
-	    theta1 = atan2(WC[1], WC[0])
+        # Theta 1, 2, 3
+        # Calculate joint angles using Geometric IK method
+        theta1 = atan2(WC[1], WC[0])
 
         # SSS triangle for theta 2 and theta 3
         side_a = 1.501 # DH_Table[d4]
@@ -160,8 +160,8 @@ def handle_calculate_IK(req):
         theta2 = pi/2 - angle_a - atan2(WC[2] - 0.75, sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35)
         theta3 = pi/2 - (angle_b + 0.036)  # 0.036 accounts for sag on link4 of -0.054m
 
-		# Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
-		# We now have the the theta for these joints that define the pose of the wrist center
+        # Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
+        # We now have the the theta for these joints that define the pose of the wrist center
         # R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3] # Don't think I need this
         
         # The inverse of R0_3 is R3_0
@@ -169,7 +169,7 @@ def handle_calculate_IK(req):
         R3_6 = R0_3_eval.transpose() * ROT_EE
 
 
-		# Theta 3, 4, 5
+        # Theta 3, 4, 5
         # Euler angles from rotation matrix
         theta4 = atan2(R3_6[2,2], -R3_6[0,2])
         theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
@@ -177,8 +177,8 @@ def handle_calculate_IK(req):
 
         # Populate response for the IK request
         # In the next line replace theta1,theta2...,theta6 by your joint angle variables
-	    joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
-	    joint_trajectory_list.append(joint_trajectory_point)
+        joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
+        joint_trajectory_list.append(joint_trajectory_point)
 
         rospy.loginfo("length of Joint Trajectory List: %s" % len(joint_trajectory_list))
         return CalculateIKResponse(joint_trajectory_list)
