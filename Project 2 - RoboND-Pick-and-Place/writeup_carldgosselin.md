@@ -288,6 +288,7 @@ theta1 = atan2(WC[1], WC[0])
 ```
 <br>
 Theta 2 & 3 - equation and explanation: <br>
+
 ```
 # SSS triangle for theta 2 and theta 3
 side_a = 1.501 # DH_Table[d4]
@@ -301,6 +302,7 @@ angle_c = acos((side_a * side_a + side_b * side_b - side_c * side_c) / (2 * side
 theta2 = pi/2 - angle_a - atan2(WC[2] - 0.75, sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35)
 theta3 = pi/2 - (angle_b + 0.036)            # 0.036 accounts for sag on link4 of -0.054m
 ```
+
 <br>
 Theta 4 - equation and explanation: <br>
 <br>
