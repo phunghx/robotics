@@ -320,7 +320,7 @@ Here is Law of Cosine equation that is used: <br>
 </br>
 
 ```
-# SSS triangle for theta 2 and theta 3
+# Triangle for theta 2 and theta 3
 side_a = 1.501 # DH_Table[d4]
 side_b = sqrt(pow((sqrt(WC[0] * WC[0] + WC[1] * WC[1]) - 0.35), 2) + pow((WC[2] - 0.75), 2))
 side_c = 1.25 # DH_Table[a2]
