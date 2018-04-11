@@ -76,9 +76,6 @@ R_y = Matrix([[  cos(-np.pi/2), 0, sin(-np.pi/2), 0],
               [              0, 0,             0, 1]
               ])
 
-# Setting up the correction matrix
-R_corr = simplify(R_z * R_y)      # simplify() returns the simplest form of an expression
-
 
 # Extract rotation matrices from the transformation matrices
 r, p, y = symbols('r p y')
@@ -95,7 +92,22 @@ Rot_z = Matrix([[cos(y), -sin(y), 0],
                 [sin(y),  cos(y), 0],
                 [     0,       0, 1]]) # yaw
 
-# ROT_EE = ROT_z * ROT_y * ROT_x  # not using for now
+
+# Gripper values
+Rot_Gripper_x = Rot_x(r)
+Rot_Gripper_y = Rot_y(p)
+Rot_Gripper_z = Rot_z(y)
+
+# Rotation matrix of end effector (Gripper)
+Rot_EE = Rot_Gripper_z * Rot_Gripper_y * Rot_Gripper_x
+
+# Setting up the end effector correction matrix (rotation correction)
+Rot_correction = Rot_z(180 * pi/180) * Rot_y(-90 * pi/180)
+
+# Finalizing the adjustment for the discrepancy between the DH table and the URDF reference frame
+Rot_EE = Rot_EE * Rot_correction
+
+
 R0_3 = T0_3[:3,:3]
 
 # apply invert matrix rule to get the correct information
@@ -162,9 +174,8 @@ def handle_calculate_IK(req):
 
         # Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
         # We now have the the theta for these joints that define the pose of the wrist center
-        # R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3] # Don't think I need this
         
-        # The inverse of R0_3 is R3_0
+        R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
         R0_3_eval = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
         R3_6 = R0_3_eval.transpose() * ROT_EE
 
