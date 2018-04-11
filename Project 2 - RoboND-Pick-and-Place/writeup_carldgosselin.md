@@ -279,7 +279,7 @@ If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE
 **Deriving the equations for individual joint angles**<br>
 <br>
 Theta 1 - equation and explanation: <br>
-Using the image below as a reference, we use the WC axis to calculate the theta1 angle<br>
+Here is the visual I drew for calculating the theta 1 angle using the WC axis:<br>
 <br>
 <div align=center>
 	<img src="misc_images/theta1.png" height="600">
