@@ -201,21 +201,42 @@ T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 An adjustment is required to address a discrepancy between the DH table and the URDF (Universal Robotic Description Format) reference frame. 
 The code below creates the correction matrix:
 ```
-# Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
-R_z = Matrix([[ cos(np.pi), -sin(np.pi), 0, 0],
-              [ sin(np.pi),  cos(np.pi), 0, 0],
-              [          0,           0, 1, 0],
-              [          0,           0, 0, 1]
-              ])
+# Extract rotation matrices from the transformation matrices
+r, p, y = symbols('r p y')
 
-R_y = Matrix([[  cos(-np.pi/2), 0, sin(-np.pi/2), 0],
-              [              0, 1,             0, 0],
-              [ -sin(-np.pi/2), 0, cos(-np.pi/2), 0],
-              [              0, 0,             0, 1]
-              ])
+Rot_x = Matrix([[1,      0,       0], 
+                [0, cos(r), -sin(r)],
+                [0, sin(r), cos(r)]])  # ROLL
 
-# Setting up the correction matrix
-R_corr = simplify(R_z * R_y)      # simplify() returns the simplest form of an expression
+Rot_y = Matrix([[cos(p),  0, sin(p)],
+                [0,       1,      0],
+                [-sin(p), 0, cos(p)]]) # Pitch
+
+Rot_z = Matrix([[cos(y), -sin(y), 0],
+                [sin(y),  cos(y), 0],
+                [     0,       0, 1]]) # yaw
+
+
+# Gripper values
+Rot_Gripper_x = Rot_x(r)
+Rot_Gripper_y = Rot_y(p)
+Rot_Gripper_z = Rot_z(y)
+
+# Rotation matrix of end effector (Gripper)
+Rot_EE = Rot_Gripper_z * Rot_Gripper_y * Rot_Gripper_x
+
+# Setting up the end effector correction matrix (rotation correction)
+Rot_correction = Rot_z(180 * pi/180) * Rot_y(-90 * pi/180)
+
+# Finalizing the adjustment for the discrepancy between the DH table and the URDF reference frame
+Rot_EE = Rot_EE * Rot_correction
+# note: Rot_EE will be used in the code below when capturing the WC (wrist center)
+
+...
+
+EE = Matrix([px, py, pz])
+ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
+WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
 ```
 
 #### 3. Decouple Inverse Kinematics problem into Inverse Position Kinematics and Inverse Orientation Kinematics; doing so derive the equations to calculate all individual joint angles.
