@@ -292,6 +292,7 @@ The equation below is shown a second time to display the formula for calculating
 	<img src="misc_images/IK_step2b.png">
 </div>
 </br>
+
 ```
 # First we find the wrist center (joint 5)
 WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
