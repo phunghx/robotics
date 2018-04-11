@@ -299,6 +299,7 @@ WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
 # Then we can calculate theta 1
 theta1 = atan2(WC[1], WC[0]) # theta1 = atan2(y,x)
 ```
+
 <br>
 Theta 2 & 3 - equation and explanation: <br>
 
