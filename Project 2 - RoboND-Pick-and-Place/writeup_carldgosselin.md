@@ -318,6 +318,7 @@ Here is the Law of Cosine equation that is used: <br>
 	<img src="misc_images/cosineLaw.png" height="100">
 </div>
 </br>
+Here is the code: <br>
 
 ```
 # Triangle for theta 2 and theta 3
