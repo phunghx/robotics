@@ -303,6 +303,16 @@ theta1 = atan2(WC[1], WC[0]) # theta1 = atan2(y,x)
 
 <br>
 Theta 2 & 3 - equation and explanation: <br>
+<br>
+<div align=center>
+	<img src="misc_images/cosinePic.png">
+</div>
+</br>
+<br>
+<div align=center>
+	<img src="misc_images/cosineLaw.png">
+</div>
+</br>
 
 ```
 # SSS triangle for theta 2 and theta 3
