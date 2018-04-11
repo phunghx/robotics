@@ -312,7 +312,7 @@ Below is a visual of the data required to capture theta 2 and theta 3: <br>
 	<img src="misc_images/cosinePic.png" height="400">
 </div>
 </br>
-Here is Law of Cosine equation that is used: <br>
+Here is the Law of Cosine equation that is used: <br>
 <br>
 <div align=center>
 	<img src="misc_images/cosineLaw.png" height="100">
