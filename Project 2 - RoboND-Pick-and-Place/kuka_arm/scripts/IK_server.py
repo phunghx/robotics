@@ -58,11 +58,6 @@ T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table)
 T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
 
 
-# Transformation for base link to joint 2 and joint 3
-T0_2 = simplify(T0_1 * T1_2)
-T0_3 = simplify(T0_2 * T2_3)
-
-
 # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
 R_z = Matrix([[ cos(np.pi), -sin(np.pi), 0, 0],
               [ sin(np.pi),  cos(np.pi), 0, 0],
