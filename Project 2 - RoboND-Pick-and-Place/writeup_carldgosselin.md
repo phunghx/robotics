@@ -205,10 +205,10 @@ The IK problem can be decoupled into **Inverse Position** and **Inverse Orientat
 <br>
 Below are the steps to solving the inverse kinematics problem: <br>
 <br>
-**Step 1**: is to complete the DH parameter table for the manipulator. <br>
+**Step 1**: Complete the DH parameter table for the manipulator. <br>
 Hint: place the origin of frames 4, 5, and 6 coincident with the WC. <br>
 
-**Step 2**: is to find the location of the WC relative to the base frame. Recall that the overall homogeneous transform between the base and end effector has the form,
+**Step 2**: Find the location of the WC relative to the base frame. Recall that the overall homogeneous transform between the base and end effector has the form,
 <div align=center>
 	<img src="misc_images/IK_step2a.png">
 </div>
@@ -220,20 +220,20 @@ If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE
 </div>
 </br>
 
-**Step 3**: find joint variables, q1, q2 and q3, such that the WC has coordinates equal to equation (3). This is the hard step. One way to attack the problem is by repeatedly projecting links onto planes and using trigonometry to solve for joint angles. Unfortunately, there is no generic recipe that works for all manipulators so you will have to experiment. The example in the next section will give you some useful guidance. <br>
+**Step 3**: Find joint variables, q1, q2 and q3, such that the WC has coordinates equal to equation (3). This is the hard step. One way to attack the problem is by repeatedly projecting links onto planes and using trigonometry to solve for joint angles. Unfortunately, there is no generic recipe that works for all manipulators so you will have to experiment. The example in the next section will give you some useful guidance. <br>
 <br>
 
-**Step 4**: once the first three joint variables are known, perform the calculations via the application of homogeneous transforms up to the WC. <br>
+**Step 4**: Once the first three joint variables are known, perform the calculations via the application of homogeneous transforms up to the WC. <br>
 <br>
 
-**Step 5**: find a set of Euler angles corresponding to the rotation matrix, <br>
+**Step 5**: Find a set of Euler angles corresponding to the rotation matrix, <br>
 <br>
 <div align=center>
 	<img src="misc_images/IK_step5.png">
 </div>
 <br>
 
-**Step 6**: choose the correct solution among the set of possible solutions<br>
+**Step 6**: Choose the correct solution among the set of possible solutions<br>
 <br>
 Here is the code for resolving the **Inverse Kinematics** problem: <br>
 <br>
