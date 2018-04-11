@@ -276,7 +276,7 @@ If, for example, you choose z4 parallel to z6 and pointing from the WC to the EE
 
 **Step 6**: Choose the correct solution among the set of possible solutions<br>
 <br>
-Derive the equations for individual joint angles<br>
+**Deriving the equations for individual joint angles**<br>
 <br>
 Theta 1 - equation and explanation: <br>
 ```
