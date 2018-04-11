@@ -108,15 +108,6 @@ Rot_correction = Rot_z(180 * pi/180) * Rot_y(-90 * pi/180)
 Rot_EE = Rot_EE * Rot_correction
 
 
-R0_3 = T0_3[:3,:3]
-
-# apply invert matrix rule to get the correct information
-R3_0 = R0_3.inv()
-
-# Transformation matrix to get to R36
-R3_6 = simplify(R3_0 * Rot_z * Rot_y * Rot_x)
-
-
 def handle_calculate_IK(req):
     rospy.loginfo("Received %s eef-poses from the plan" % len(req.poses))
     if len(req.poses) < 1:
@@ -142,12 +133,7 @@ def handle_calculate_IK(req):
 
     	### Your IK code here
         # Compensate for rotation discrepancy between DH parameters and Gazebo
-        # R_corr = simplify(R_z * R_y)  # Previously setup (around line 80)
-        
-        ROT_Error = Rot_z.subs(y, radians(180)) * Rot_y.subs(p, radians(-90))
-    
-        ROT_EE = ROT_EE * ROT_Error
-        ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
+        # ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
 
         EE = Matrix ([[px],
                       [py],
@@ -174,7 +160,6 @@ def handle_calculate_IK(req):
 
         # Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
         # We now have the the theta for these joints that define the pose of the wrist center
-        
         R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
         R0_3_eval = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
         R3_6 = R0_3_eval.transpose() * ROT_EE
