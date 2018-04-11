@@ -193,7 +193,6 @@ T6_EE = TF_Matrix(alpha6, a6, d7, q7).subs(DH_Table)
 ```
 
 In addition, also generate a generalized homogeneous transform between base_link and gripper_link using only end-effector(gripper) pose.
-<br><br>
 The following code is applied to generate a generalized homogeneous transform using only the end-effector pose:
 ```
 T0_EE = T0_1 * T1_2 * T2_3 * T3_4 * T4_5 * T5_6 * T6_EE
