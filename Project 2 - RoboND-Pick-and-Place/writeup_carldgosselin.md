@@ -286,7 +286,7 @@ Here is the visual I drew for calculating the theta 1 angle using the WC axis:<b
 </div>
 </br>
 
-The equation below is shown a second time to display the formula for calculating the wrist center (WC):
+The equation below is shown, once again, to display the formula for calculating the wrist center (WC):
 <br>
 <div align=center>
 	<img src="misc_images/IK_step2b.png">
