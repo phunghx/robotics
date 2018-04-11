@@ -43,7 +43,7 @@ def TF_Matrix(alpha, a, d, q):
 
 # Create individual transformation matrices
 # note:  I'm learning through feedback that using subs() is slower than using NumPy and SciPy.  
-#        subs() and evalf() is from SymPy and is usually used for simple evaluation.  
+#        subs() and evalf() are from SymPy.  They are meant to be used for simple evaluation.  
 #        subs() and evalf() slow down with larger calculations (moreso than NumPy and SciPy). 
 #        I'll keep the subs() function for this project and consider changing next time.  
 T0_1  = TF_Matrix(alpha0, a0, d1, q1).subs(DH_Table)
@@ -87,6 +87,7 @@ Rot_correction = Rot_z(180 * pi/180) * Rot_y(-90 * pi/180)
 
 # Finalizing the adjustment for the discrepancy between the DH table and the URDF reference frame
 Rot_EE = Rot_EE * Rot_correction
+# note: Rot_EE will be used in the code below when capturing the WC (wrist center)
 
 
 def handle_calculate_IK(req):
@@ -115,12 +116,9 @@ def handle_calculate_IK(req):
     	### Your IK code here
         # Compensate for rotation discrepancy between DH parameters and Gazebo
         # Operation needed to adjust the discrepancy between the DH table and the URDF reference frame vs DH convention
-        # ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
-
-        EE = Matrix ([[px],
-                      [py],
-                      [pz]])
-
+        
+        EE = Matrix([px, py, pz])
+        ROT_EE = ROT_EE.subs({'r': roll, 'p': pitch, 'y': yaw})
         WC = EE - (0.303) * ROT_EE[:,2] # DH_Table[d7] = 0.303
 	    
 	    
