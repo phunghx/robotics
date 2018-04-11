@@ -338,18 +338,28 @@ theta3 = pi/2 - (angle_b + 0.036)            # 0.036 accounts for sag on link4 o
 <br>
 Theta 4, 5, 6 - equation and explanation: <br>
 <br>
-
+For this calculation, we need the overall rotation from the base_link to the gripper link.  
+The overall rotation is equal to the product of individual rotations between respective links.
+This has already been captured with variable ROT_EE. <br>
+<br>
+The Euler Angles equation, shown below, will be used to calculate theta 4, 5, and 6: <br>
+<br>
+<div align=center>
+	<img src="misc_images/IK_step5.png">
+</div>
+</br>
 ```
+# Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
+# We now have the the theta for these joints that define the pose of the wrist center
+R0_3 = T0_1[0:3,0:3] * T1_2[0:3,0:3] * T2_3[0:3,0:3]
+R0_3_eval = R0_3.evalf(subs={q1 : theta1, q2 : theta2, q3 : theta3})
+R3_6 = R0_3_eval.transpose() * ROT_EE
+
 # Theta 4, 5, 6
 # Euler angles from rotation matrix
 theta4 = atan2(R3_6[2,2], -R3_6[0,2])
 theta5 = atan2(sqrt(R3_6[0,2] * R3_6[0,2] + R3_6[2,2] * R3_6[2,2]), R3_6[1,2])
 theta6 = atan2(-R3_6[1,1], R3_6[1,0])
-
-# Populate response for the IK request
-# In the next line replace theta1,theta2...,theta6 by your joint angle variables
-joint_trajectory_point.positions = [theta1, theta2, theta3, theta4, theta5, theta6]
-joint_trajectory_list.append(joint_trajectory_point)
 ```
 <br>
 
