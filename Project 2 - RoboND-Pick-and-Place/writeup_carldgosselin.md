@@ -348,6 +348,7 @@ The Euler Angles equation, shown below, will be used to calculate theta 4, 5, an
 	<img src="misc_images/IK_step5.png">
 </div>
 </br>
+
 ```
 # Get the rotation from joint 3 to the end effector (joint 0 to joint 3)
 # We now have the the theta for these joints that define the pose of the wrist center
