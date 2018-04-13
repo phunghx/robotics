@@ -1,6 +1,6 @@
 ## Project: Kinematics Pick & Place
 ### The Writeup
-In this project, a simulated Kuka KR210 arm targets, picks up, and disposes a can from a shelf to a dropbox.
+In this project, a simulated Kuka KR210 arm targets, picks up, and disposes of an object from a shelf to a dropbox.
 
 <div align=center>
 	<img src="misc_images/req-challenge.gif">
