@@ -3,7 +3,7 @@
 In this project, a simulated Kuka KR210 arm targets, picks up, and disposes of an object from a shelf to a dropbox.
 
 <div align=center>
-	<img src="misc_images/req-challenge.gif" height="600">
+	<img src="misc_images/req-challenge.gif" height="400">
 </div>
 <br>
 
