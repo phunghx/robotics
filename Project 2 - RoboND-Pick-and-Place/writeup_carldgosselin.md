@@ -371,7 +371,7 @@ theta6 = atan2(-R3_6[1,1], R3_6[1,0])
 #### 1. Fill in the `IK_server.py` file with properly commented python code for calculating Inverse Kinematics based on previously performed Kinematic Analysis. 
 <br>
 <div align=center>
-	<img src="misc_images/req-challenge.gif" height="500"> <br>
-	<br>
-<a href="https://github.com/carldgosselin/robotics/blob/master/Project%202%20-%20RoboND-Pick-and-Place/kuka_arm/scripts/IK_server.py"> IK_server.py </a>
+	<a href="https://github.com/carldgosselin/robotics/blob/master/Project%202%20-%20RoboND-Pick-and-Place/kuka_arm/scripts/IK_server.py"> IK_server.py </a>
+    <br><br>
+	<img src="misc_images/req-challenge.gif" height="500">
 </div>
