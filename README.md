@@ -6,7 +6,7 @@
 ## Project 3 - RoboND-3D-Perception
 <a href="Project 3 - RoboND-3D-Perception">
 <div align=center>
-	<img src="Project 3 - RoboND-3D-Perception/misc_images/PR2.gif">
+	<img src="Project 3 - RoboND-3D-Perception/misc_images/PR2.png">
 </div>
 </a>
 <p align="center">
