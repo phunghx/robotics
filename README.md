@@ -3,6 +3,19 @@
 ## Please navigate to the project folders for detailed README's for each project.
 <br><br>
 
+## Project 3 - RoboND-3D-Perception
+<a href="Project 3 - RoboND-3D-Perception">
+<div align=center>
+	<img src="Project 2 - RoboND-Pick-and-Place/misc_images/req-challenge.gif">
+</div>
+</a>
+<p align="center">
+<a target="_new" href="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception">project folder</a> -
+<a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/README.md">readme</a> -
+<a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/writeup_carldgosselin.md">writeup</a>
+</p>
+<br>
+
 ## Project 2 - RoboND-Pick-and-Place
 <a href="Project 2 - RoboND-Pick-and-Place">
 <div align=center>
