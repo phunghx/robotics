@@ -1,4 +1,4 @@
-## Exercise 1: code * pics
+## Exercise 1: code & pcd pics
 
 # Code:
 ```
@@ -87,4 +87,4 @@ pcl.save(extracted_outliers_filtered, filename)
 ####
 ```
 
-# Pics:
+# PCD Pics:
