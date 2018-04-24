@@ -1,4 +1,4 @@
-## Exercise 1: code & point cloud data pics
+## Exercise 1: tabletop segmentation code & point cloud data pics
 
 # Code:
 ```
