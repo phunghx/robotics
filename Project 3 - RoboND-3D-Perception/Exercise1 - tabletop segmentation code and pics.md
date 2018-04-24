@@ -96,7 +96,10 @@ tabletop.pcd
 <br>
 
 voxel_downsampled.pcd
-
+<div align=center>
+	<img src="misc_images/voxel_downsampled.png">	
+</div>
+<br>
 
 pass_through_filtered.pcd
 
