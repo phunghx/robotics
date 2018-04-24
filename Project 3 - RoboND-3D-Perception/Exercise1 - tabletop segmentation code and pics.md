@@ -87,7 +87,7 @@ pcl.save(extracted_outliers_filtered, filename)
 ####
 ```
 
-# Pics:
+# Pics (output):
 
 tabletop.pcd
 <div align=center>
