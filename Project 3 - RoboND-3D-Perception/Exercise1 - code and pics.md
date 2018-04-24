@@ -1,4 +1,4 @@
-## Exercise 1: code & pcd pics
+## Exercise 1: code & point cloud data pics
 
 # Code:
 ```
@@ -87,4 +87,5 @@ pcl.save(extracted_outliers_filtered, filename)
 ####
 ```
 
-# PCD Pics:
+# Point Cloud Data Pics:
+
