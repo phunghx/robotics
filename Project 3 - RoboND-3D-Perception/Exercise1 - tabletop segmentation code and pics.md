@@ -108,7 +108,10 @@ pass_through_filtered.pcd
 <br>
 
 extracted_inliers.pcd
-
+<div align=center>
+	<img src="misc_images/extracted_inliers.png">	
+</div>
+<br>
 
 extracted_outliers.pcd
 
