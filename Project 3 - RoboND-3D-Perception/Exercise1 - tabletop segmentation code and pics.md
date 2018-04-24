@@ -102,7 +102,10 @@ voxel_downsampled.pcd
 <br>
 
 pass_through_filtered.pcd
-
+<div align=center>
+	<img src="misc_images/pass_through_filtered.png">	
+</div>
+<br>
 
 extracted_inliers.pcd
 
