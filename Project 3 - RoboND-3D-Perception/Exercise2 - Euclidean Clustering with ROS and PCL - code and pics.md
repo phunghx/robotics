@@ -1,4 +1,4 @@
-## Exercise 1: tabletop segmentation code & point cloud data pics
+## Exercise 2: euclidian clustering with ROS and PCL & point cloud data pics
 
 # Code:
 ```
@@ -131,38 +131,26 @@ if __name__ == '__main__':
 
 # Pics (output):
 
-tabletop.pcd
+starting pic
 <div align=center>
-	<img src="misc_images/tabletop.png">	
+	<img src="misc_images/startingPic.png">	
 </div>
 <br>
 
-voxel_downsampled.pcd
+pcl_objects
 <div align=center>
-	<img src="misc_images/voxel_downsampled.png">	
+	<img src="misc_images/pcl_objects.png">	
 </div>
 <br>
 
-pass_through_filtered.pcd
+pcl_table
 <div align=center>
-	<img src="misc_images/pass_through_filtered.png">	
+	<img src="misc_images/pcl_table.png">	
 </div>
 <br>
 
-extracted_inliers.pcd
+pcl_cluster
 <div align=center>
-	<img src="misc_images/extracted_inliers.png">	
-</div>
-<br>
-
-extracted_outliers.pcd
-<div align=center>
-	<img src="misc_images/extracted_outliers.png">	
-</div>
-<br>
-
-extracted_outliers_filtered.pcd
-<div align=center>
-	<img src="misc_images/extracted_outliers_filtered.png">	
+	<img src="misc_images/pcl_cluster.png">	
 </div>
 <br>
