@@ -114,7 +114,10 @@ extracted_inliers.pcd
 <br>
 
 extracted_outliers.pcd
-
+<div align=center>
+	<img src="misc_images/extracted_inliers.png">	
+</div>
+<br>
 
 extracted_outliers_filtered.pcd
 
