@@ -89,3 +89,23 @@ pcl.save(extracted_outliers_filtered, filename)
 
 # Pics:
 
+tabletop.pcd
+<div align=center>
+	<img src="misc_images/tabletop.png">	
+</div>
+<br>
+
+voxel_downsampled.pcd
+
+
+pass_through_filtered.pcd
+
+
+extracted_inliers.pcd
+
+
+extracted_outliers.pcd
+
+
+extracted_outliers_filtered.pcd
+
