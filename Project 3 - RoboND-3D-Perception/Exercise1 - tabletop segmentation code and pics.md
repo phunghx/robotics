@@ -87,5 +87,5 @@ pcl.save(extracted_outliers_filtered, filename)
 ####
 ```
 
-# Point Cloud Data Pics:
+# Pics:
 
