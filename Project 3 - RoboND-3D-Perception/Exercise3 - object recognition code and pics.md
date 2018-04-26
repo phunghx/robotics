@@ -220,20 +220,14 @@ starting pic
 </div>
 <br>
 
-pcl_objects
+[placeholder]
 <div align=center>
-	<img src="misc_images/pcl_objects.png">	
+	<img src="misc_images/startingPic.png">	
 </div>
 <br>
 
-pcl_table
+[placeholder]
 <div align=center>
-	<img src="misc_images/pcl_table.png">	
-</div>
-<br>
-
-pcl_cluster
-<div align=center>
-	<img src="misc_images/pcl_cluster.png">	
+	<img src="misc_images/startingPic.png">	
 </div>
 <br>
