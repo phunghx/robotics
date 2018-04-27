@@ -220,9 +220,9 @@ starting pic
 </div>
 <br>
 
-[placeholder]
+Object Recognition - Initial Attempt
 <div align=center>
-	<img src="misc_images/startingPic.png">	
+	<img src="misc_images/initial_SVM_attempt.png">	
 </div>
 <br>
 
