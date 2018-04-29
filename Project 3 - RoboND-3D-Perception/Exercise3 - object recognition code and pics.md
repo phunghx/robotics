@@ -1,6 +1,11 @@
 ## Exercise 3: object recognition code and pics
 
 # object_recognition.py:
+```
+Test
+
+```
+
 # capture_features.py:
 ```
 #!/usr/bin/env python
