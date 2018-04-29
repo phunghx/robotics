@@ -375,7 +375,8 @@ def compute_normal_histograms(normal_cloud):
     # no changes
 ```  
 <br>
-
+```
+```
 # Pics (output):
 
 starting pic
