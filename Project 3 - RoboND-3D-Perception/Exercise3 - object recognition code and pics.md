@@ -394,13 +394,13 @@ Error when running capture_features.py (Do I need to deleted something to get ri
 </div>
 <br>
 
-SVM score
+SVM score (not sure how to improve this score)
 <div align=center>
 	<img src="misc_images/SVM_score.png">	
 </div>
 <br>
 
-Confusion matrix
+Confusion matrix (not sure how to improve this score)
 <div align=center>
 	<img src="misc_images/confusion_matrix.png">	
 </div>
