@@ -214,7 +214,7 @@ if __name__ == '__main__':
 ```
 <br>
 # capture_features.py:
-
+<br>
 ```
 #!/usr/bin/env python
 import numpy as np
