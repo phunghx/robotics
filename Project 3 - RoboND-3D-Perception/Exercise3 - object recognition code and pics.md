@@ -382,13 +382,13 @@ Object Recognition - Initial Attempt with no updates to code
 </div>
 <br>
 
-Error when opening VMware
+Error when opening VMware (Not sure if I need to fix is worth fixing as I run everything manually)
 <div align=center>
 	<img src="misc_images/VMware_error_onstartup.png">	
 </div>
 <br>
 
-Error when running capture_features.py
+Error when running capture_features.py (Do I need to deleted something to get rid of this error?)
 <div align=center>
 	<img src="misc_images/error_when_running_capture_features.png">	
 </div>
@@ -406,8 +406,10 @@ Confusion matrix
 </div>
 <br>
 
-Error when suspending VMware
+Error when suspending VMware (Not sure if I need to fix is worth fixing as I run everything manually)
 <div align=center>
 	<img src="misc_images/VMware_error_on_startup_and_shutdown.png">	
 </div>
 <br>
+
+Any help is greatly appreciated.
