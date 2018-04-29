@@ -210,12 +210,13 @@ if __name__ == '__main__':
     # TODO: Spin while node is not shutdown
     while not rospy.is_shutdown():
         rospy.spin()
-
 ```
+
 <br>
 # capture_features.py:
 <br><br>
  <br>
+ 
  ```
 
 #!/usr/bin/env python
