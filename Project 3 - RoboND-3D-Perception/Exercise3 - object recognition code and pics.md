@@ -365,8 +365,10 @@ def compute_normal_histograms(normal_cloud):
 
     return normed_features
 ```
+
 <br>
 # train_svm.py:
+
 ```
     # no changes
 ```  
