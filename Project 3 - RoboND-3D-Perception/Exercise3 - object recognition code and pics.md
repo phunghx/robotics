@@ -1,6 +1,7 @@
 ## Exercise 3: object recognition code and pics
 
 # object_recognition.py:
+
 ```
 #!/usr/bin/env python
 
@@ -212,7 +213,6 @@ if __name__ == '__main__':
 
 ```
 
-<br>
 # capture_features.py:
 
 ```
