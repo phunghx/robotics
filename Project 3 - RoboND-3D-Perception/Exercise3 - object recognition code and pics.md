@@ -376,13 +376,13 @@ starting pic
 </div>
 <br>
 
-Object Recognition - Initial Attempt with no updates to code
+Object Recognition - Initial attempt with no updates to code
 <div align=center>
 	<img src="misc_images/initial_SVM_attempt.png">	
 </div>
 <br>
 
-Error when opening VMware (Not sure if I need to fix is worth fixing as I run everything manually)
+Error when opening VMware (Not sure if I need to fix this as I run everything manually)
 <div align=center>
 	<img src="misc_images/VMware_error_onstartup.png">	
 </div>
@@ -406,7 +406,7 @@ Confusion matrix
 </div>
 <br>
 
-Error when suspending VMware (Not sure if I need to fix is worth fixing as I run everything manually)
+Error when suspending VMware (Not sure if I need to fix this as I run everything manually)
 <div align=center>
 	<img src="misc_images/VMware_error_on_startup_and_shutdown.png">	
 </div>
