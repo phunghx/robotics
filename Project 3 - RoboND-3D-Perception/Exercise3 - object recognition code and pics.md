@@ -369,14 +369,9 @@ def compute_normal_histograms(normal_cloud):
 ```
 
 <br>
-# train_svm.py:
-
-```
-    # no changes
-```  
+# train_svm.py (no changes)
 <br>
-```
-```
+
 # Pics (output):
 
 starting pic
