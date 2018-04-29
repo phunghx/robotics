@@ -376,13 +376,38 @@ starting pic
 </div>
 <br>
 
-Object Recognition - Initial Attempt
+Object Recognition - Initial Attempt with no updates to code
 <div align=center>
 	<img src="misc_images/initial_SVM_attempt.png">	
 </div>
 <br>
 
-[placeholder]
+Error when opening VMware
 <div align=center>
-	<img src="misc_images/startingPic.png">	
+	<img src="misc_images/VMware_error_onstartup.png">	
 </div>
+<br>
+
+Error when running capture_features.py
+<div align=center>
+	<img src="misc_images/error_when_running_capture_features.png">	
+</div>
+<br>
+
+SVM score
+<div align=center>
+	<img src="misc_images/SVM_score.png">	
+</div>
+<br>
+
+Confusion matrix
+<div align=center>
+	<img src="misc_images/confusion_matrix.png">	
+</div>
+<br>
+
+Error when suspending VMware
+<div align=center>
+	<img src="misc_images/VMware_error_on_startup_and_shutdown.png">	
+</div>
+<br>
