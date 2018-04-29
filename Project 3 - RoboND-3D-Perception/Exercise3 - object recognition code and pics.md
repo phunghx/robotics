@@ -2,6 +2,26 @@
 
 # object_recognition.py:
 # capture_features.py:
+# features.py:
+# Pics (output):
+
+starting pic
+<div align=center>
+	<img src="misc_images/startingPic.png">	
+</div>
+<br>
+
+Object Recognition - Initial Attempt
+<div align=center>
+	<img src="misc_images/initial_SVM_attempt.png">	
+</div>
+<br>
+
+[placeholder]
+<div align=center>
+	<img src="misc_images/startingPic.png">	
+</div>
+<br>
 
 ```
 #!/usr/bin/env python
