@@ -84,9 +84,9 @@ def pcl_callback(pcl_msg):
     # as well as minimum and maximum cluster size (in points)
     # NOTE: These are poor choices of clustering parameters
     # Your task is to experiment and find values that work for segmenting objects.
-    ec.set_ClusterTolerance(0.014)
-    ec.set_MinClusterSize(20)
-    ec.set_MaxClusterSize(2050)
+    ec.set_ClusterTolerance(0.02)
+    ec.set_MinClusterSize(100)
+    ec.set_MaxClusterSize(25000)
 
     # Search the k-d tree for clusters
     ec.set_SearchMethod(tree)
