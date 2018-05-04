@@ -382,12 +382,6 @@ Object Recognition - Initial attempt with no updates to code
 </div>
 <br>
 
-Error when opening VMware (Not sure if I need to fix this as I run everything manually)
-<div align=center>
-	<img src="misc_images/VMware_error_onstartup.png">	
-</div>
-<br>
-
 SVM score (not sure how to improve this score)
 <div align=center>
 	<img src="misc_images/SVM_score.png">	
