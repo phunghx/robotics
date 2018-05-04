@@ -388,12 +388,6 @@ Error when opening VMware (Not sure if I need to fix this as I run everything ma
 </div>
 <br>
 
-Error when running capture_features.py (Do I need to deleted something to get rid of this error?)
-<div align=center>
-	<img src="misc_images/error_when_running_capture_features.png">	
-</div>
-<br>
-
 SVM score (not sure how to improve this score)
 <div align=center>
 	<img src="misc_images/SVM_score.png">	
@@ -405,11 +399,3 @@ Confusion matrix (not sure how to improve this score)
 	<img src="misc_images/confusion_matrix.png">	
 </div>
 <br>
-
-Error when suspending VMware (Not sure if I need to fix this as I run everything manually)
-<div align=center>
-	<img src="misc_images/VMware_error_on_startup_and_shutdown.png">	
-</div>
-<br>
-
-Any help is greatly appreciated.
