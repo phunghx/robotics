@@ -44,6 +44,5 @@
 <a href="Project 1 - RoboND-Rover-Project/writeup_carldgosselin.md">
 <div align=center>
 	<img src="Project 1 - RoboND-Rover-Project/misc/rover1.gif">
-	test
 </div>
 </a>
