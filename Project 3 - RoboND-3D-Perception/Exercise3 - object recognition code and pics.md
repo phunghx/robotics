@@ -475,18 +475,18 @@ starting pic
 
 Object Recognition
 <div align=center>
-	<img src="misc_images/object_recognition.png">	
+	<img src="misc_images/object_recognition.PNG">	
 </div>
 <br>
 
 SVM score
 <div align=center>
-	<img src="misc_images/SVM_score_prompt2.png">	
+	<img src="misc_images/SVM_score_prompt2.PNG">	
 </div>
 <br>
 
 Confusion matrix
 <div align=center>
-	<img src="misc_images/confusion_matrix2_normalized.png">	
+	<img src="misc_images/confusion_matrix2_normalized.PNG">	
 </div>
 <br>
