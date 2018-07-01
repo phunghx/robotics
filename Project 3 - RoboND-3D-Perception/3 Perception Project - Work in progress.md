@@ -603,9 +603,10 @@ if __name__ == '__main__':
     while not rospy.is_shutdown():
         rospy.spin()
 ```
-
+<br>
 so... not sure where to go from here <br>
-Running "roslaunch pr2_robot robot_spawn.launch" only produces the pr2 robot in Gazebo and RVIZ does not even launch <br>
+<br>
+Running "roslaunch pr2_robot robot_spawn.launch" only produces the pr2 robot in Gazebo and RVIZ does not even launch. <br>
 The robot_spawn.launch files are different between sensor_stick and pr2. <br>
 <br>
 
