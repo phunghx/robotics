@@ -46,19 +46,19 @@ Please click <a href="https://github.com/carldgosselin/robotics/blob/master/Proj
 
 Confusion matrix for test1 world
 <div align=center>
-	<img src="../test_world_1.PNG">	
+	<img src="misc_images/test_world_1.PNG">	
 </div>
 <br>
 
 SVM score for test1 world
 <div align=center>
-	<img src="../test_world_1_svm.PNG">	
+	<img src="misc_images/test_world_1_svm.PNG">	
 </div>
 <br>
 
 Object recognition for test1 world
 <div align=center>
-	<img src="../3D Perception Object Recognition 1.PNG">	
+	<img src="misc_images/3D Perception Object Recognition 1.PNG">	
 </div>
 <br>
 
