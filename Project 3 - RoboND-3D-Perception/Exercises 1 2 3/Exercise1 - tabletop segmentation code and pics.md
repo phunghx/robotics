@@ -91,7 +91,7 @@ pcl.save(extracted_outliers_filtered, filename)
 
 tabletop.pcd
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception/misc_images/tabletop.png">	
+	<img src="../misc_images/tabletop.png">	
 </div>
 <br>
 
