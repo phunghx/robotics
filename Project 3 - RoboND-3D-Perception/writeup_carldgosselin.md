@@ -35,7 +35,6 @@ Please click <a href="https://github.com/carldgosselin/robotics/blob/master/Proj
 Please click <a href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/Exercises%201%202%203/Exercise2%20-%20Euclidean%20Clustering%20with%20ROS%20and%20PCL%20-%20code%20and%20pics.md">here</a> for link to Exercise 2 documentation.
 
 #### 3. Complete Exercise 3 Steps.  Features extracted and SVM trained.  Object recognition implemented.
-Here is an example of how to include an image in your writeup.
 
 Please click <a href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/Exercises%201%202%203/Exercise3%20-%20object%20recognition%20code%20and%20pics.md">here</a> for link to Exercise 3 documentation.
 
