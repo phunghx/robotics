@@ -469,24 +469,24 @@ plt.show()
 
 starting pic
 <div align=center>
-	<img src="misc_images/startingPic.png">	
+	<img src="../misc_images/startingPic.png">	
 </div>
 <br>
 
 Object Recognition
 <div align=center>
-	<img src="misc_images/object_recognition.PNG">	
+	<img src="../misc_images/object_recognition.PNG">	
 </div>
 <br>
 
 SVM score
 <div align=center>
-	<img src="misc_images/SVM_score_prompt2.PNG">	
+	<img src="../misc_images/SVM_score_prompt2.PNG">	
 </div>
 <br>
 
 Confusion matrix
 <div align=center>
-	<img src="misc_images/confusion_matrix2_normalized.PNG">	
+	<img src="../misc_images/confusion_matrix2_normalized.PNG">	
 </div>
 <br>
