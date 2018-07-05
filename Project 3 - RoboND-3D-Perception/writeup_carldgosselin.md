@@ -104,8 +104,27 @@ Object recognition for test3 world
 	5 out of 7	
 </div>
 <br>
+<br>
+<a href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/output_1.yaml">output_1.yaml</a>
+<br>
+<a href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/output_2.yaml">output_2.yaml</a>
+<br>
+<a href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/output_3.yaml">output_3.yaml</a>
+<br>
 
-Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.  
+
+Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further. 
+
+I liked how the course broke down the project into 3 incremental exercises.  I was able to gain a better understanding of the many moving parts to this project thanks to this division of labour.  
+
+The implementation of this project might fail in the following ways:<br>
+- The robot won't be able to detect the objects if they are completely obscured from it's vision.<br>
+- The robot may not be able to recognize objects if the noise level goes above a certain threshold. <br>
+- The robot will not recognize objects it hasn't been trained on. <br>
+
+If I were to pursue this project further, I would look to improve my SVM scores as well as complete the additional challenge section of the project.
+
+
 
 
 
