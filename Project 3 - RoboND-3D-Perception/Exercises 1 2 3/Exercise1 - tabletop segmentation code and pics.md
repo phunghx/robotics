@@ -97,30 +97,30 @@ tabletop.pcd
 
 voxel_downsampled.pcd
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception/misc_images/voxel_downsampled.png">	
+	<img src="../misc_images/voxel_downsampled.png">	
 </div>
 <br>
 
 pass_through_filtered.pcd
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception/misc_images/pass_through_filtered.png">	
+	<img src="../misc_images/pass_through_filtered.png">	
 </div>
 <br>
 
 extracted_inliers.pcd
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception/misc_images/extracted_inliers.png">	
+	<img src="../misc_images/extracted_inliers.png">	
 </div>
 <br>
 
 extracted_outliers.pcd
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception/misc_images/extracted_outliers.png">	
+	<img src="../misc_images/extracted_outliers.png">	
 </div>
 <br>
 
 extracted_outliers_filtered.pcd
 <div align=center>
-	<img src="https://github.com/carldgosselin/robotics/tree/master/Project%203%20-%20RoboND-3D-Perception/misc_images/extracted_outliers_filtered.png">	
+	<img src="../misc_images/extracted_outliers_filtered.png">	
 </div>
 <br>
