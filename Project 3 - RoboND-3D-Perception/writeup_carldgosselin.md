@@ -42,6 +42,26 @@ Please click <a href="https://github.com/carldgosselin/robotics/blob/master/Proj
 
 #### 1. For all three tabletop setups (`test*.world`), perform object recognition, then read in respective pick list (`pick_list_*.yaml`). Next construct the messages that would comprise a valid `PickPlace` request output them to `.yaml` format.
 
+# test1.world
+
+Confusion matrix for test1 world
+<div align=center>
+	<img src="../test_world_1.PNG">	
+</div>
+<br>
+
+SVM score for test1 world
+<div align=center>
+	<img src="../test_world_1_svm.PNG">	
+</div>
+<br>
+
+Object recognition for test1 world
+<div align=center>
+	<img src="../3D Perception Object Recognition 1.PNG">	
+</div>
+<br>
+
 
 Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.  
 
