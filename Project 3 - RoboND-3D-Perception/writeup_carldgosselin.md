@@ -58,7 +58,8 @@ SVM score for test1 world
 
 Object recognition for test1 world
 <div align=center>
-	<img src="misc_images/3D Perception Object Recognition 1.PNG">	
+	<img src="misc_images/3D Perception Object Recognition 1.PNG"> <br>
+	3 out of 3	
 </div>
 <br>
 
@@ -78,7 +79,8 @@ SVM score for test2 world
 
 Object recognition for test2 world
 <div align=center>
-	<img src="misc_images/3D Perception Object Recognition 2.PNG">	
+	<img src="misc_images/3D Perception Object Recognition 2.PNG"> <br>
+	5 out of 5	
 </div>
 <br>
 
@@ -98,7 +100,8 @@ SVM score for test3 world
 
 Object recognition for test3 world
 <div align=center>
-	<img src="misc_images/3D Perception Object Recognition 3.PNG">	
+	<img src="misc_images/3D Perception Object Recognition 3.PNG"> <br>
+	6 out of 7	
 </div>
 <br>
 
