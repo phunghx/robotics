@@ -62,6 +62,45 @@ Object recognition for test1 world
 </div>
 <br>
 
+# test2.world
+
+Confusion matrix for test2 world
+<div align=center>
+	<img src="misc_images/test_world_2.PNG">	
+</div>
+<br>
+
+SVM score for test2 world
+<div align=center>
+	<img src="misc_images/test_world_2_svm.PNG">	
+</div>
+<br>
+
+Object recognition for test2 world
+<div align=center>
+	<img src="misc_images/3D Perception Object Recognition 2.PNG">	
+</div>
+<br>
+
+# test3.world
+
+Confusion matrix for test3 world
+<div align=center>
+	<img src="misc_images/test_world_3.PNG">	
+</div>
+<br>
+
+SVM score for test3 world
+<div align=center>
+	<img src="misc_images/test_world_3_svm.PNG">	
+</div>
+<br>
+
+Object recognition for test3 world
+<div align=center>
+	<img src="misc_images/3D Perception Object Recognition 3.PNG">	
+</div>
+<br>
 
 Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further.  
 
