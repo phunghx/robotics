@@ -111,7 +111,8 @@ Object recognition for test3 world
 <br>
 <a href="https://github.com/carldgosselin/robotics/blob/master/Project%203%20-%20RoboND-3D-Perception/output_3.yaml">output_3.yaml</a>
 <br>
-
+<br>
+<br>
 
 Spend some time at the end to discuss your code, what techniques you used, what worked and why, where the implementation might fail and how you might improve it if you were going to pursue this project further. 
 
