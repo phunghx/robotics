@@ -133,24 +133,24 @@ if __name__ == '__main__':
 
 starting pic
 <div align=center>
-	<img src="misc_images/startingPic.png">	
+	<img src="../misc_images/startingPic.png">	
 </div>
 <br>
 
 pcl_objects
 <div align=center>
-	<img src="misc_images/pcl_objects.png">	
+	<img src="../misc_images/pcl_objects.png">	
 </div>
 <br>
 
 pcl_table
 <div align=center>
-	<img src="misc_images/pcl_table.png">	
+	<img src="../misc_images/pcl_table.png">	
 </div>
 <br>
 
 pcl_cluster
 <div align=center>
-	<img src="misc_images/pcl_cluster.png">	
+	<img src="../misc_images/pcl_cluster.png">	
 </div>
 <br>
