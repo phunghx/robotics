@@ -101,7 +101,7 @@ SVM score for test3 world
 Object recognition for test3 world
 <div align=center>
 	<img src="misc_images/3D Perception Object Recognition 3.PNG"> <br>
-	6 out of 7	
+	5 out of 7	
 </div>
 <br>
 
