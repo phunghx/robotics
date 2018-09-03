@@ -18,11 +18,10 @@ validation_steps = 50
 workers = 2
 ``` 
 
-Neural Network parameters - explained:<br>
+### Neural Network parameters - explained:<br>
 1. Learning Rate - The rate at which 'old beliefs' are abandoned for new ones.
-<br>
 At the start of the project, the learning rate was set to 0.  During my experimentation with the code, I started the learning rate at 0.001.  I eventually reduced the learning rate to 0.0007 and then finally to 0.0005.  This was the last variable changed to achieve the final grade score above 0.40.
-
+<br>
 2. Batch Size:
 - Originally set to 0
 
