@@ -26,7 +26,7 @@ At the start of the project, the learning rate was set to 0.  During my experime
 The batch size was also set to 0 at the start of the project.  I set this number to 64. <br>
 
 3. Number of Epoch - number of times the entire training dataset gets propagated through the network.<br><br>
-This variable was also set to 0 at the beginning of the project.<br>
+This variable was also set to 0 at the beginning of the project.  I went as I up as 100 for this variable and eventually settled on 72.  I reduced this number to prevent overfitting the data and focused my attention a little more on the learning rate to achieve the final grade score above 0.40.<br>
 
 4. Steps per Epoch:
 - Originally set to 200
