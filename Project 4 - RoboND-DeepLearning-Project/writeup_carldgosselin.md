@@ -99,3 +99,4 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 
 ## Conclusion
 
+As with any machine learning algorithm, data is key.  To improve the scores and predictability of this exercise, the quality of images for both training and validation sets is key.  Capturing quality images of the Hero and the absence of the Hero will improve the scores of this exercise.  In addition, getting a variation of images that are close-up and far-away would also improve the scores of this exercise.
