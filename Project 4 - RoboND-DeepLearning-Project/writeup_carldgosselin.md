@@ -1,12 +1,24 @@
 ## Project: Follow-me drone
 
-I'll start this report with the final score:
+I'll start this report with the final grade score:
 ```
 In [63]: # And the final grade score is 
 final_score = final_IoU * weight
 print(final_score)
 ```
 Result: 0.41784247025954463
+
+For this project, achieving a final grade score over 0.40 (40%) was made possible with the following Neural Network parameters:
+```
+learning_rate = 0.0005
+batch_size = 64
+num_epochs = 50
+steps_per_epoch = 72
+validation_steps = 50
+workers = 2
+``` 
+
+
 
 # Network Architecture - Explained
 [convey an understanding of the network architecture]
@@ -69,16 +81,7 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 ```
 
 # Neural Network Parameters - Explained
-[convey an understanding of the parameters chosen]
 
-```
-learning_rate = 0.0005
-batch_size = 64
-num_epochs = 50
-steps_per_epoch = 72
-validation_steps = 50
-workers = 2
-```
 
 # 1 by 1 convolutions - Explained
 
