@@ -1,5 +1,13 @@
 ## Project: Follow-me drone
 
+I'll start this report with the final score:
+```
+In [63]: # And the final grade score is 
+final_score = final_IoU * weight
+print(final_score)
+```
+Result: 0.41784247025954463
+
 # Network Architecture - Explained
 [convey an understanding of the network architecture]
 - Explain each layer of the network architecture
@@ -18,7 +26,7 @@ def  encoder_blockencoder (input_layer, filters, strides):
     
     return output_layer
 ```
-
+...
 ```
 def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
@@ -44,13 +52,13 @@ def decoder_block(small_ip_layer, large_ip_layer, filters):
     
     return output_layer
 ```
-
+...
 ```
 def bilinear_upsample(input_layer):
     output_layer = BilinearUpSampling2D((2,2))(input_layer)
     return output_layer
 ```
-
+...
 ```
 def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
