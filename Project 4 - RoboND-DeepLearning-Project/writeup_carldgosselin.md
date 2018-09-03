@@ -22,11 +22,11 @@ workers = 2
 1. Learning Rate - The rate at which 'old beliefs' are abandoned for new ones.<br><br>
 At the start of the project, the learning rate was set to 0.  During my experimentation with the code, I set the learning rate to 0.001.  I eventually reduced the learning rate to 0.0007 and then finally to 0.0005.  This was the last variable changed to achieve the final grade score above 0.40.<br>
 
-2. Batch Size:
-- Originally set to 0
+2. Batch Size - number of training samples/images that get propagated through the network in a single pass. <br><br>
+The batch size was also set to 0 at the start of the project.  I set this number to 64. <br>
 
-3. Number of Epoch:
-- Originally set to 0
+3. Number of Epoch - number of times the entire training dataset gets propagated through the network.<br><br>
+This variable was also set to 0 at the beginning of the project.<br>
 
 4. Steps per Epoch:
 - Originally set to 200
