@@ -38,12 +38,10 @@ This variable was initially set to 50.  I left this variable intact.<br>
 This variable was initially set to 2.  I left this variable intact as my hardware seemed to run the exercise without any major delays.<br>
 
 # Network Architecture - Explained
-[convey an understanding of the network architecture]
-- Explain each layer of the network architecture
-- Explain the role that it plays in the overall network
-- Demonstrate the benefit/drawback of different network architectures pertaining to this project
-- Justify the currentnetowrk with fatual data
-- Provide graph, table, illustration or figure to serve as reference
+
+Encoder blocks, a 1x1 convolution, and decoder blocks are used for the Fully Convolutional Network (FCN).
+
+The encoder block takes in the image data for processing within two functions to produce the output layer: separable_conv2d_batchnorm and separable_conv2d_batchnorm.
 
 ## Encoder block
 
@@ -64,6 +62,8 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     output_layer = layers.BatchNormalization()(output_layer) 
     return output_layer
 ```
+
+After the encoding block and 1x1 convolution block are executed, the decoder block is used to extract the coded data with additional spatial information.
 
 ## Decoder block
 
@@ -96,3 +96,6 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     output_layer = layers.BatchNormalization()(output_layer) 
     return output_layer
 ```
+
+## Conclusion
+
