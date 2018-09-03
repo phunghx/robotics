@@ -20,7 +20,7 @@ workers = 2
 
 ### Neural Network parameters - explained:<br>
 1. Learning Rate - The rate at which 'old beliefs' are abandoned for new ones.<br><br>
-At the start of the project, the learning rate was set to 0.  During my experimentation with the code, I set the learning rate to 0.001.  I eventually reduced the learning rate to 0.0007 and then finally to 0.0005.  This was the last variable changed to achieve the final grade score above 0.40.<br>
+At the start of the project, the learning rate was set to 0.  During my experimentation with the code, I set the learning rate to 0.001.  I eventually reduced the learning rate to 0.0007 and then finally to 0.0005.  This was the last variable changed in order to achieve the final grade score above 0.40.<br>
 
 2. Batch Size - number of training samples/images that get propagated through the network in a single pass. <br><br>
 The batch size was also set to 0 at the start of the project.  I set this number to 64. <br>
@@ -96,23 +96,3 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     output_layer = layers.BatchNormalization()(output_layer) 
     return output_layer
 ```
-
-# Neural Network Parameters - Explained
-
-
-# 1 by 1 convolutions - Explained
-
-
-# Fully Connected Layer - Explained
-
-
-# Image Manipulation - Explained
-- Encoding images
-- Decoding images
-
-
-# Limitations to the neural network given the data
-
-
-# Model
-- Score greater or equal to 40% (0.40)
