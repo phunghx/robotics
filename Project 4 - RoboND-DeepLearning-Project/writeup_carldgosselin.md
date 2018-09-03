@@ -16,14 +16,14 @@
 - Batch Size
 - Etc...
 
-,,,
+```
 learning_rate = 0.0005
 batch_size = 64
 num_epochs = 50
 steps_per_epoch = 72
 validation_steps = 50
 workers = 2
-,,,
+```
 
 # 1 by 1 convolutions - Explained
 
