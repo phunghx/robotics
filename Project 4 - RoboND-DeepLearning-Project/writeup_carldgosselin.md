@@ -25,16 +25,16 @@ At the start of the project, the learning rate was set to 0.  During my experime
 **2. Batch Size - number of training samples/images that get propagated through the network in a single pass.**<br>
 The batch size was also set to 0 at the start of the project.  I set this number to 64.<br><br>
 
-3. Number of Epoch - number of times the entire training dataset gets propagated through the network.<br><br>
+**3. Number of Epoch - number of times the entire training dataset gets propagated through the network.**<br>
 This variable was also set to 0 at the beginning of the project.  I went as I up as 100 for this variable and eventually settled on 50.  I reduced this number to prevent overfitting the data and focused my attention a little more on the learning rate to achieve the final grade score above 0.40.<br>
 
-4. Steps per Epoch - number of batches of training images that go through the network in 1 epoch.<br><br>
+**4. Steps per Epoch - number of batches of training images that go through the network in 1 epoch.**<br>
 This variable was also set to 200.  Similar to the "Number of Epoch" variable, I decided to reduce the number of steps to 72 to prevent overfitting the data and focused my attention a little more on the learning rate to achieve the final grade score above 0.40.<br>
 
-5. Validation Steps - number of batches of validation images that go through the network in 1 epoch.<br><br>
+**5. Validation Steps - number of batches of validation images that go through the network in 1 epoch.**<br>
 This variable was initially set to 50.  I left this variable intact.<br>
 
-6. Workers - maximum number of processes to spin up. This can affect your training speed and is dependent on your hardware.<br><br>
+**6. Workers - maximum number of processes to spin up. This can affect your training speed and is dependent on your hardware.**<br>
 This variable was initially set to 2.  I left this variable intact as my hardware seemed to run the exercise without any major delays.<br>
 
 # Network Architecture - Explained
