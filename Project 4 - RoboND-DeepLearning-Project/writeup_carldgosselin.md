@@ -63,7 +63,7 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
     return output_layer
 ```
 
-After the encoding block and 1x1 convolution block are executed, the decoder block is used to extract the coded data with additional spatial information.
+After the encoding block and 1x1 convolution block are executed, the decoder block is used to extract/decode the encoded data with additional spatial information.
 
 ## Decoder block
 
