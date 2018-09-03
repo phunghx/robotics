@@ -18,7 +18,18 @@ validation_steps = 50
 workers = 2
 ``` 
 
+Neural Network parameters - explained:<br>
+1. Learning Rate:
 
+2. Batch Size:
+
+3. Number of Epoch:
+
+4. Steps per Epoch:
+
+5. Validation Steps:
+
+6. Workers:
 
 # Network Architecture - Explained
 [convey an understanding of the network architecture]
