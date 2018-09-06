@@ -1,5 +1,10 @@
 ## Project: Follow-me drone
 
+<div align=center>
+    <img src="misc_images/sim_screenshot.PNG">    
+</div>
+<br>
+
 I'll start this report with the final grade score:
 ```
 In [63]: # And the final grade score is 
