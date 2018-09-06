@@ -118,3 +118,5 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 ## Conclusion
 
 As with any machine learning algorithm, data is key.  To improve the scores and predictability of this exercise, the quality of images for both training and validation sets is key.  Capturing quality images of the Hero and the absence of the Hero will improve the scores of this exercise.  In addition, getting a variation of images that are close-up and far-away would also improve the scores of this exercise.
+
+I don't believe this model would fair well with other objects such as dogs, cats, cars, etc...  This model is trained on a red person target.  The model would need to be re-trained with many samples of a different object/target to be effective.
