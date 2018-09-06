@@ -1,7 +1,7 @@
 ## Project: Follow-me drone
 
 <div align=center>
-    <img src="misc_images/sim_screenshot.png" style="width: 50%; height: 50%">    
+    <img src="misc_images/sim_screenshot.png" style="width:100; height:100">    
 </div>
 <br>
 
