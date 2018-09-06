@@ -46,6 +46,16 @@ This variable was initially set to 2.  I left this variable intact as my hardwar
 
 Encoder blocks, a 1x1 convolution, and decoder blocks are used for the Fully Convolutional Network (FCN).
 
+<div align=center>
+    <img src="misc_images/FCN2.PNG">    
+</div>
+<br>
+
+<div align=center>
+    <img src="misc_images/FCN1.PNG">    
+</div>
+<br>
+
 The encoder block takes in the image data for processing within two functions to produce the output layer: separable_conv2d_batchnorm and separable_conv2d_batchnorm.
 
 ## Encoder block
