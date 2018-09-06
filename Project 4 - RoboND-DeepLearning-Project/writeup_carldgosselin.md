@@ -81,7 +81,7 @@ def separable_conv2d_batchnorm(input_layer, filters, strides=1):
 After the encoding process, the 1x1 convolution block is executed.  The 1x1 convolution is used to reduce the number of depth channels.  It compresses the previous filter dimensions to 1 (dimensionality reduction).  Thus, speeding up the computation process.
 
 
- After the 1x1 convolution block, the decoder block is used to extract/decode the encoded data with additional spatial information.
+ After the 1x1 convolution block is executed (mapping an input pixel with all it's channels to an output pixel), the decoder block is executed to extract/decode the encoded data with additional spatial information.
 
 ## Decoder block
 
