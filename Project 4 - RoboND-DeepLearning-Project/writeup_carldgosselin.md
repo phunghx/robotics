@@ -13,6 +13,55 @@ print(final_score)
 ```
 Result: 0.41784247025954463
 
+## Network Architecture Explained
+
+The network architecture used in this exercise is a Fully Convolutional Network (FCN for short).  A FCN has the ability to detect a target object within a given image.  FCN differs from a Convolutional Neural Network (CNN) in that the latter is mostly used for classifying a given image (as opposed to detecting a target object within an image).  The strength of an FCN is the retention of spatial information surrounding the target object.
+
+A FCN is transformed from a CNN in the following ways:
+1.  The fully connected layers of a CNN are replaced with 1x1 Convolutional Layers (in order to keep spatial information)
+2.  The “Up Sampling” technique is used to increase an image to a higher resolution
+3.  The “Skip Connections” technique is used to retain additional features of an image 
+
+### The benefits of encoding and decoding
+
+A FCN is composed, at a high-level, of 3 parts:
+1. Encoding
+2. 1x1 convolution
+3. Decoding
+
+<div align=center>
+    <img src="misc_images/FCN3.png">    
+</div>
+<br>
+
+**Encoder**
+The purpose of the encoder layers is to simultaneously compress the original images (reducing the resolution) while capturing key features of the images.  These features will provide cues/information for classification.  
+
+**1 by 1 convolution – where/when/how it should be used**
+A 1 x 1 convolution layer is used when the spatial information within an image needs to be kept intact.  The 1 x 1 convolution layer will evaluate the compressed image for target object identification.  The target object will have a unique values during this processing.
+
+<div align=center>
+    <img src="misc_images/FCN4.png">    
+</div>
+<br>
+
+**Decoder**
+The decoder is simply used to increase an image to its original size.  Because the encoding process has compressed the original image while losing a bit of spatial information, the decoded image will only display general shapes. During the decoding process, in order to “save” additional details from the original image, a technique called “skip connections” is used to maintain additional details of the original image in the output file.  The screenshot below displays the difference between using and not using the “skip connections” technique. 
+
+<div align=center>
+    <img src="misc_images/FCN5.png">    
+</div>
+<br> 
+
+For this exercise, a billinear upsampling was used to increase the size of the image.  Because the decoder processes the output image from the 1x1 convolution, the image can be increased in size using both axis.
+
+<div align=center>
+    <img src="misc_images/upsampling.png">    
+</div>
+<br> 
+
+
+### Hyper Parameters Explained
 For this project, achieving a final grade score over 0.40 (40%) was made possible with the following Neural Network parameters:
 ```
 learning_rate = 0.0005
