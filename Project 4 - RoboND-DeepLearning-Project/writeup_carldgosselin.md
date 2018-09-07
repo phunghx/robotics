@@ -15,7 +15,7 @@ Result: 0.41784247025954463
 
 ## Network Architecture Explained
 
-The network architecture used in this exercise is a Fully Convolutional Network (FCN for short).  A FCN has the ability to detect a target object within a given image.  FCN differs from a Convolutional Neural Network (CNN) in that the latter is mostly used for classifying a given image (as opposed to detecting a target object within an image).  The strength of an FCN is the retention of spatial information surrounding the target object.
+The network architecture used in this exercise is a Fully Convolutional Network (FCN for short).  A FCN has the ability to detect a target object within a given image.  FCN differs from a Convolutional Neural Network (CNN) in that the latter is mostly used for classifying a given image (as opposed to detecting a target object within an image).  The strength of a FCN is the retention of spatial information surrounding the target object.
 
 A FCN is transformed from a CNN in the following ways:
 1.  The fully connected layers of a CNN are replaced with 1x1 Convolutional Layers (in order to keep spatial information)
@@ -34,10 +34,10 @@ A FCN is composed, at a high-level, of 3 parts:
 </div>
 <br>
 
-**Encoder**
+**Encoder** <br>
 The purpose of the encoder layers is to simultaneously compress the original images (reducing the resolution) while capturing key features of the images.  These features will provide cues/information for classification.  
 
-**1 by 1 convolution – where/when/how it should be used**
+**1 by 1 convolution – where/when/how it should be used** <br>
 A 1 x 1 convolution layer is used when the spatial information within an image needs to be kept intact.  The 1 x 1 convolution layer will evaluate the compressed image for target object identification.  The target object will have a unique values during this processing.
 
 <div align=center>
@@ -45,7 +45,7 @@ A 1 x 1 convolution layer is used when the spatial information within an image n
 </div>
 <br>
 
-**Decoder**
+**Decoder** <br>
 The decoder is simply used to increase an image to its original size.  Because the encoding process has compressed the original image while losing a bit of spatial information, the decoded image will only display general shapes. During the decoding process, in order to “save” additional details from the original image, a technique called “skip connections” is used to maintain additional details of the original image in the output file.  The screenshot below displays the difference between using and not using the “skip connections” technique. 
 
 <div align=center>
