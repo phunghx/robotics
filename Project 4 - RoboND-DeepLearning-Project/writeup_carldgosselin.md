@@ -35,7 +35,29 @@ A FCN is composed, at a high-level, of 3 parts:
 <br>
 
 **Encoder** <br>
-The purpose of the encoder layers is to simultaneously compress the original images (reducing the resolution) while capturing key features of the images.  These features will provide cues/information for classification.  
+The purpose of the encoder layers is to simultaneously compress the original images (reducing the resolution) while capturing key features of the images.  These features will provide cues/information for classification. 
+
+From a technical point of view, the encoder block takes in the image data for processing within two functions to produce the output layer: separable_conv2d_batchnorm and separable_conv2d_batchnorm.
+
+## Encoder block
+
+```
+def  encoder_blockencoder (input_layer, filters, strides):
+    
+    # TODO Create a separable convolution layer using the separable_conv2d_batchnorm() function.
+    output_layer = separable_conv2d_batchnorm(input_layer, filters, strides)
+    
+    return output_layer
+```
+...
+```
+def separable_conv2d_batchnorm(input_layer, filters, strides=1):
+    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
+                             padding='same', activation='relu')(input_layer)
+    
+    output_layer = layers.BatchNormalization()(output_layer) 
+    return output_layer
+```
 
 **1 by 1 convolution – where/when/how it should be used** <br>
 A 1 x 1 convolution layer is used when the spatial information within an image needs to be kept intact.  The 1 x 1 convolution layer will evaluate the compressed image for target object identification.  The target object will have a unique values during this processing.
@@ -44,6 +66,8 @@ A 1 x 1 convolution layer is used when the spatial information within an image n
     <img src="misc_images/FCN4.png">    
 </div>
 <br>
+
+From a technical point of view, the 1x1 convolution is used to reduce the number of depth channels.  It compresses the previous filter dimensions to 1 (dimensionality reduction).  Thus, speeding up the computation process.
 
 **Decoder** <br>
 The decoder is simply used to increase an image to its original size.  Because the encoding process has compressed the original image while losing a bit of spatial information, the decoded image will only display general shapes. During the decoding process, in order to “save” additional details from the original image, a technique called “skip connections” is used to maintain additional details of the original image in the output file.  The screenshot below displays the difference between using and not using the “skip connections” technique. 
@@ -60,6 +84,37 @@ For this exercise, a billinear upsampling was used to increase the size of the i
 </div>
 <br> 
 
+### Decoder block of code
+
+```
+def decoder_block(small_ip_layer, large_ip_layer, filters):
+    
+    # TODO Upsample the small input layer using the bilinear_upsample() function.
+    upsample = bilinear_upsample(small_ip_layer)
+    
+    # TODO Concatenate the upsampled and large input layers using layers.concatenate
+    concat_layer = layers.concatenate([upsample, large_ip_layer])
+
+    # TODO Add some number of separable convolution layers
+    output_layer = separable_conv2d_batchnorm(concat_layer, filters)
+    
+    return output_layer
+```
+...
+```
+def bilinear_upsample(input_layer):
+    output_layer = BilinearUpSampling2D((2,2))(input_layer)
+    return output_layer
+```
+...
+```
+def separable_conv2d_batchnorm(input_layer, filters, strides=1):
+    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
+                             padding='same', activation='relu')(input_layer)
+    
+    output_layer = layers.BatchNormalization()(output_layer) 
+    return output_layer
+```
 
 ### Hyper Parameters Explained
 For this project, achieving a final grade score over 0.40 (40%) was made possible with the following Neural Network parameters:
@@ -93,8 +148,6 @@ This variable was initially set to 2.  I left this variable intact as my hardwar
 
 # Network Architecture - Explained
 
-Encoder blocks, a 1x1 convolution, and decoder blocks are used for the Fully Convolutional Network (FCN).
-
 <div align=center>
     <img src="misc_images/FCN2.PNG">    
 </div>
@@ -104,65 +157,6 @@ Encoder blocks, a 1x1 convolution, and decoder blocks are used for the Fully Con
     <img src="misc_images/FCN1.PNG">    
 </div>
 <br>
-
-The encoder block takes in the image data for processing within two functions to produce the output layer: separable_conv2d_batchnorm and separable_conv2d_batchnorm.
-
-## Encoder block
-
-```
-def  encoder_blockencoder (input_layer, filters, strides):
-    
-    # TODO Create a separable convolution layer using the separable_conv2d_batchnorm() function.
-    output_layer = separable_conv2d_batchnorm(input_layer, filters, strides)
-    
-    return output_layer
-```
-...
-```
-def separable_conv2d_batchnorm(input_layer, filters, strides=1):
-    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
-                             padding='same', activation='relu')(input_layer)
-    
-    output_layer = layers.BatchNormalization()(output_layer) 
-    return output_layer
-```
-
-After the encoding process, the 1x1 convolution block is executed.  The 1x1 convolution is used to reduce the number of depth channels.  It compresses the previous filter dimensions to 1 (dimensionality reduction).  Thus, speeding up the computation process.
-
-
- After the 1x1 convolution block is executed (mapping an input pixel with all it's channels to an output pixel), the decoder block is executed to extract/decode the encoded data with additional spatial information.
-
-## Decoder block
-
-```
-def decoder_block(small_ip_layer, large_ip_layer, filters):
-    
-    # TODO Upsample the small input layer using the bilinear_upsample() function.
-    upsample = bilinear_upsample(small_ip_layer)
-    
-    # TODO Concatenate the upsampled and large input layers using layers.concatenate
-    concat_layer = layers.concatenate([upsample, large_ip_layer])
-
-    # TODO Add some number of separable convolution layers
-    output_layer = separable_conv2d_batchnorm(concat_layer, filters)
-    
-    return output_layer
-```
-...
-```
-def bilinear_upsample(input_layer):
-    output_layer = BilinearUpSampling2D((2,2))(input_layer)
-    return output_layer
-```
-...
-```
-def separable_conv2d_batchnorm(input_layer, filters, strides=1):
-    output_layer = SeparableConv2DKeras(filters=filters,kernel_size=3, strides=strides,
-                             padding='same', activation='relu')(input_layer)
-    
-    output_layer = layers.BatchNormalization()(output_layer) 
-    return output_layer
-```
 
 ## Conclusion
 
