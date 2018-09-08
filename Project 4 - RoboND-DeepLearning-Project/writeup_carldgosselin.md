@@ -150,7 +150,7 @@ This variable was initially set to 2.  I left this variable intact as my hardwar
 
 As with any machine learning algorithm, data is key.  To improve the scores and predictability of this exercise, the quality of images for both training and validation sets is key.  Capturing quality images of the Hero and the absence of the Hero will improve the scores of this exercise.  In addition, getting a variation of images that are close-up and far-away would also improve the scores of this exercise.
 
-Some of the visuals below show the innacuracy of the algorithm when attempting to identify the hero target...
+Some of the visuals below show slight innacuracies when attempting to identify the hero target in various scenarios...
 
 <div align=center>
     <img src="misc_images/followingTarget.PNG">    
