@@ -153,17 +153,17 @@ As with any machine learning algorithm, data is key.  To improve the scores and 
 Some of the visuals below show the innacuracy of the algorithm when attempting to identify the hero target...
 
 <div align=center>
-    <img src="misc_images/followingTarget.png">    
+    <img src="misc_images/followingTarget.PNG">    
 </div>
 <br> 
 
 <div align=center>
-    <img src="misc_images/withoutTarget.png">    
+    <img src="misc_images/withoutTarget.PNG">    
 </div>
 <br> 
 
 <div align=center>
-    <img src="misc_images/patrollingWithTarget.png">    
+    <img src="misc_images/patrollingWithTarget.PNG">    
 </div>
 <br> 
 
