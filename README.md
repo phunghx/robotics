@@ -3,6 +3,20 @@
 ## Please navigate to the project folders for detailed README's for each project.
 <br><br>
 
+## Project 4 - RoboND-DeepLearning-Project
+<a href="Project 4 - RoboND-DeepLearning-Project">
+<div align=center>
+	<img src="Project 4 - RoboND-DeepLearning-Project/misc_images/follow_MeDemo4.gif">
+</div>
+</a>
+<p align="center">
+<a target="_new" href="https://github.com/carldgosselin/robotics/tree/master/Project%204%20-%20RoboND-DeepLearning-Project">project folder</a> -
+<a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%204%20-%20RoboND-DeepLearning-Project/README.md">readme</a> -
+<a target="_new" href="https://github.com/carldgosselin/robotics/blob/master/Project%204%20-%20RoboND-DeepLearning-Project/writeup_carldgosselin.md">writeup</a>
+</p>
+<br>
+
+
 ## Project 3 - RoboND-3D-Perception
 <a href="Project 3 - RoboND-3D-Perception">
 <div align=center>
