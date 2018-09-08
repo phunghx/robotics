@@ -1,7 +1,7 @@
 ## Project: Follow-me drone
 
 <div align=center>
-    <img src="misc_images/sim_screenshot2.png">    
+    <img src="misc_images/follow_MeDemo4.gif">    
 </div>
 <br>
 
